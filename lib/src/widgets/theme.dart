@@ -48,23 +48,56 @@ class MyTheme {
         ),
       );
   static ThemeData darkTheme(BuildContext context) => ThemeData(
-        primarySwatch: themeTwoSwatch,
+        primarySwatch: themeThreeSwatch,
         fontFamily: GoogleFonts.poppins().fontFamily,
-        cardColor: Colors.white,
-        appBarTheme: const AppBarTheme(
-          color: Colors.white,
+        cardColor: themeThreeFg,
+        textTheme: TextTheme(
+          headline1: GoogleFonts.poppins(color: themeThreeFg),
+          headline2: GoogleFonts.poppins(color: themeThreeFg),
+          headline3: GoogleFonts.poppins(color: themeThreeFg),
+          headline4: GoogleFonts.poppins(color: themeThreeFg),
+          headline5: GoogleFonts.poppins(color: themeThreeFg),
+          headline6: GoogleFonts.poppins(color: themeThreeFg),
+          bodyText1: GoogleFonts.poppins(color: themeThreeFg),
+          bodyText2: GoogleFonts.poppins(color: themeThreeFg),
+          button: GoogleFonts.poppins(color: themeThreeFg),
+          caption: GoogleFonts.poppins(color: themeThreeFg),
+          overline: GoogleFonts.poppins(color: themeThreeFg),
+          subtitle1: GoogleFonts.poppins(color: themeThreeFg),
+          subtitle2: GoogleFonts.poppins(color: themeThreeFg),
+        ),
+        scaffoldBackgroundColor: themeThreeBg,
+        brightness: Brightness.dark,
+        appBarTheme: AppBarTheme(
+          color: themeThreeBg,
           elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: themeThreeFg),
         ),
       );
   static ThemeData greenLightTheme(BuildContext context) => ThemeData(
         primarySwatch: themeFourSwatch,
         fontFamily: GoogleFonts.poppins().fontFamily,
-        cardColor: Colors.white,
-        appBarTheme: const AppBarTheme(
-          color: Colors.white,
+        cardColor: themeFourBg,
+        scaffoldBackgroundColor: themeFourBg,
+        textTheme: TextTheme(
+          headline1: GoogleFonts.poppins(color: themeFourFg),
+          headline2: GoogleFonts.poppins(color: themeFourFg),
+          headline3: GoogleFonts.poppins(color: themeFourFg),
+          headline4: GoogleFonts.poppins(color: themeFourFg),
+          headline5: GoogleFonts.poppins(color: themeFourFg),
+          headline6: GoogleFonts.poppins(color: themeFourFg),
+          bodyText1: GoogleFonts.poppins(color: themeFourFg),
+          bodyText2: GoogleFonts.poppins(color: themeFourFg),
+          button: GoogleFonts.poppins(color: themeFourFg),
+          caption: GoogleFonts.poppins(color: themeFourFg),
+          overline: GoogleFonts.poppins(color: themeFourFg),
+          subtitle1: GoogleFonts.poppins(color: themeFourFg),
+          subtitle2: GoogleFonts.poppins(color: themeFourFg),
+        ),
+        appBarTheme: AppBarTheme(
+          color: themeFourFg,
           elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: themeFourFg),
         ),
       );
 
@@ -134,8 +167,10 @@ class MyTheme {
   static const int _themeThreePrimaryValue = 0xFF263238;
 
   // Theme 4
-  static Color themeFourBg = const Color(0xFFE5F8E1);
-  static Color themeFourFg = const Color(0xFF1EA242);
+  static Color themeFourBg = const Color(0xFF1EA242);
+  static Color themeFourBg1 = const Color(0xFFE5F8E1);
+  static Color themeFourFg = const Color(0xFFFFFFFF);
+  static Color themeFourFg1 = const Color(0xFF1EA242);
   // Primary Swatch
   static const MaterialColor themeFourSwatch = MaterialColor(
     _themeOnePrimaryValue,

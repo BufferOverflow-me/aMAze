@@ -14,10 +14,9 @@ class MyApp extends StatelessWidget {
         animation: settingsController,
         builder: (BuildContext context, Widget? child) {
           return MaterialApp(
-            theme: MyTheme.darkBlueTheme(),
-            darkTheme: MyTheme.darkTheme(context),
-            // themeMode: settingsController.themeMode,
-            // themeMode: MyTheme.darkTheme(context),
+            theme: MyTheme.greenLightTheme(context),
+            darkTheme: MyTheme.darkBlueTheme(),
+            themeMode: settingsController.themeMode,
             debugShowCheckedModeBanner: false,
             home: const HomePage(),
           );
