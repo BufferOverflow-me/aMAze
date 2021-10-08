@@ -20,6 +20,7 @@ dependencies:
   http: ^0.13.4
   shared_preferences: ^2.0.8
   google_fonts: ^2.1.0
+  introduction_screen: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +34,9 @@ flutter:
 
   assets:
     - assets/
+    - assets/images/
+    - assets/svg/
+
   
   
   

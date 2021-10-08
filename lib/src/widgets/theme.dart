@@ -7,13 +7,23 @@ class MyTheme {
         fontFamily: GoogleFonts.poppins().fontFamily,
         backgroundColor: themeOneBg,
         textTheme: TextTheme(
-          headline1: GoogleFonts.poppins(color: themeOneFg),
-          headline2: GoogleFonts.poppins(color: themeOneFg),
-          headline3: GoogleFonts.poppins(color: themeOneFg),
-          headline4: GoogleFonts.poppins(color: themeOneFg),
-          headline5: GoogleFonts.poppins(color: themeOneFg),
-          headline6: GoogleFonts.poppins(color: themeOneFg),
-          bodyText1: GoogleFonts.poppins(color: themeOneFg),
+          headline1: GoogleFonts.poppins(color: themeOneFg, fontSize: 64),
+          headline2: GoogleFonts.poppins(
+            color: themeOneFg,
+            fontSize: 48,
+            fontWeight: FontWeight.bold,
+            height: 1,
+          ),
+          headline3: GoogleFonts.poppins(color: themeOneFg, fontSize: 36),
+          headline4: GoogleFonts.poppins(
+              color: themeOneFg, fontSize: 24, fontWeight: FontWeight.w700),
+          headline5: GoogleFonts.poppins(
+            color: themeOneFg,
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+          headline6: GoogleFonts.poppins(color: themeOneFg, fontSize: 14),
+          bodyText1: GoogleFonts.poppins(color: themeOneFg, fontSize: 12),
           bodyText2: GoogleFonts.poppins(color: themeOneFg),
           button: GoogleFonts.poppins(color: themeOneFg),
           caption: GoogleFonts.poppins(color: themeOneFg),
@@ -49,6 +59,8 @@ class MyTheme {
       );
   static ThemeData darkTheme(BuildContext context) => ThemeData(
         primarySwatch: themeThreeSwatch,
+        primaryColor: themeThreeBg,
+        primaryColorLight: themeThreeFg,
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: themeThreeFg,
         textTheme: TextTheme(
@@ -76,17 +88,30 @@ class MyTheme {
       );
   static ThemeData greenLightTheme(BuildContext context) => ThemeData(
         primarySwatch: themeFourSwatch,
+        primaryColor: themeFourBg,
+        primaryColorLight: themeFourFg,
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: themeFourBg,
+        iconTheme: IconThemeData(color: themeFourBg),
         scaffoldBackgroundColor: themeFourBg,
         textTheme: TextTheme(
-          headline1: GoogleFonts.poppins(color: themeFourFg),
-          headline2: GoogleFonts.poppins(color: themeFourFg),
-          headline3: GoogleFonts.poppins(color: themeFourFg),
-          headline4: GoogleFonts.poppins(color: themeFourFg),
-          headline5: GoogleFonts.poppins(color: themeFourFg),
-          headline6: GoogleFonts.poppins(color: themeFourFg),
-          bodyText1: GoogleFonts.poppins(color: themeFourFg),
+          headline1: GoogleFonts.poppins(color: themeFourFg, fontSize: 64),
+          headline2: GoogleFonts.poppins(
+            color: themeFourFg,
+            fontSize: 48,
+            fontWeight: FontWeight.bold,
+            height: 1,
+          ),
+          headline3: GoogleFonts.poppins(color: themeFourFg, fontSize: 36),
+          headline4: GoogleFonts.poppins(
+              color: themeFourFg, fontSize: 24, fontWeight: FontWeight.w700),
+          headline5: GoogleFonts.poppins(
+            color: themeFourFg,
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+          headline6: GoogleFonts.poppins(color: themeFourFg, fontSize: 14),
+          bodyText1: GoogleFonts.poppins(color: themeFourFg, fontSize: 12),
           bodyText2: GoogleFonts.poppins(color: themeFourFg),
           button: GoogleFonts.poppins(color: themeFourFg),
           caption: GoogleFonts.poppins(color: themeFourFg),
