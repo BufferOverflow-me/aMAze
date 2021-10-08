@@ -1,5 +1,4 @@
 import 'package:fitness_app/src/screens/homepage.dart';
-import 'package:fitness_app/src/screens/start/fitness_coach.dart';
 import 'package:fitness_app/src/screens/start/intro_page.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/settings/settings_service.dart';
@@ -22,7 +21,6 @@ class MyApp extends StatelessWidget {
             darkTheme: MyTheme.darkBlueTheme(),
             themeMode: settingsController.themeMode,
             debugShowCheckedModeBanner: false,
-            initialRoute: const FitnessPageGym().routeName,
             home: const AmazeIntroductionPage(),
           );
         });

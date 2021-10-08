@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 class MyTheme {
   static ThemeData darkBlueTheme() => ThemeData(
         primarySwatch: themeOneSwatch,
+        primaryColor: themeOneBg,
+        primaryColorLight: themeOneFg,
         fontFamily: GoogleFonts.poppins().fontFamily,
         backgroundColor: themeOneBg,
         textTheme: TextTheme(
@@ -22,7 +24,8 @@ class MyTheme {
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
-          headline6: GoogleFonts.poppins(color: themeOneFg, fontSize: 14),
+          headline6: GoogleFonts.poppins(
+              color: themeOneFg, fontSize: 14, fontWeight: FontWeight.w600),
           bodyText1: GoogleFonts.poppins(color: themeOneFg, fontSize: 12),
           bodyText2: GoogleFonts.poppins(color: themeOneFg),
           button: GoogleFonts.poppins(color: themeOneFg),
@@ -110,7 +113,8 @@ class MyTheme {
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
-          headline6: GoogleFonts.poppins(color: themeFourFg, fontSize: 14),
+          headline6: GoogleFonts.poppins(
+              color: themeOneFg, fontSize: 14, fontWeight: FontWeight.w600),
           bodyText1: GoogleFonts.poppins(color: themeFourFg, fontSize: 12),
           bodyText2: GoogleFonts.poppins(color: themeFourFg),
           button: GoogleFonts.poppins(color: themeFourFg),

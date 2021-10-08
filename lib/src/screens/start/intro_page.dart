@@ -1,7 +1,5 @@
-import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class AmazeIntroductionPage extends StatelessWidget {
@@ -14,10 +12,7 @@ class AmazeIntroductionPage extends StatelessWidget {
         child: IntroductionScreen(
           pages: [
             PageViewModel(
-              image: SvgPicture.asset(
-                "assets/svg/pushup_guy.svg",
-                height: MediaQuery.of(context).size.height * 0.4,
-              ),
+              image: buildImage("assets/svg/pushup_guy.svg", context),
               titleWidget: Align(
                 alignment: Alignment.bottomLeft,
                 child: Column(
@@ -45,16 +40,10 @@ class AmazeIntroductionPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline5,
                 ),
               ),
-              decoration: const PageDecoration(
-                bodyAlignment: Alignment.bottomLeft,
-                imageAlignment: Alignment.bottomCenter,
-              ),
+              decoration: getPageDecoration(),
             ),
             PageViewModel(
-              image: SvgPicture.asset(
-                "assets/svg/yoga_lady.svg",
-                height: MediaQuery.of(context).size.height * 0.4,
-              ),
+              image: buildImage("assets/svg/yoga_lady.svg", context),
               titleWidget: Align(
                 alignment: Alignment.bottomLeft,
                 child: Column(
@@ -82,16 +71,10 @@ class AmazeIntroductionPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline5,
                 ),
               ),
-              decoration: const PageDecoration(
-                bodyAlignment: Alignment.bottomLeft,
-                imageAlignment: Alignment.bottomCenter,
-              ),
+              decoration: getPageDecoration(),
             ),
             PageViewModel(
-              image: SvgPicture.asset(
-                "assets/svg/meditating_lady.svg",
-                height: MediaQuery.of(context).size.height * 0.4,
-              ),
+              image: buildImage("assets/svg/meditating_lady.svg", context),
               titleWidget: Align(
                 alignment: Alignment.bottomLeft,
                 child: Column(
@@ -119,27 +102,50 @@ class AmazeIntroductionPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline5,
                 ),
               ),
-              decoration: const PageDecoration(
-                bodyAlignment: Alignment.bottomLeft,
-                imageAlignment: Alignment.bottomCenter,
-              ),
+              decoration: getPageDecoration(),
             ),
           ],
+          dotsDecorator: getDotDecorator(context),
           done: Text(
-            "Done",
-            style: Theme.of(context).textTheme.headline5,
+            "Get Started",
+            style: Theme.of(context).textTheme.headline6,
           ),
+          skip: Text(
+            "Skip",
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          next: const Icon(
+            Icons.arrow_forward,
+            color: Colors.white,
+          ),
+          onSkip: () {},
           onDone: () {},
-          next: const Text(
-            "Next",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-          showNextButton: false,
+          showDoneButton: true,
+          showSkipButton: true,
+          showNextButton: true,
         ),
       ),
     );
   }
+
+  DotsDecorator getDotDecorator(BuildContext context) => DotsDecorator(
+        activeShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        activeColor: Theme.of(context).primaryColorLight,
+        color: Colors.grey,
+        size: const Size(10, 10),
+        activeSize: const Size(22, 10),
+      );
+
+  Widget buildImage(String path, BuildContext context) => SvgPicture.asset(
+        path,
+        height: MediaQuery.of(context).size.height * 0.4,
+      );
+
+  PageDecoration getPageDecoration() => const PageDecoration(
+        bodyAlignment: Alignment.bottomLeft,
+        imageAlignment: Alignment.bottomCenter,
+        imagePadding: EdgeInsets.only(bottom: 0),
+      );
 }
