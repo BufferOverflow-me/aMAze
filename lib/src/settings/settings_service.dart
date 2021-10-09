@@ -1,4 +1,3 @@
-import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
