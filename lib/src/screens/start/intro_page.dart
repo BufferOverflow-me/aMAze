@@ -109,15 +109,15 @@ class AmazeIntroductionPage extends StatelessWidget {
           dotsDecorator: getDotDecorator(context),
           done: CustomText(
             title: "Get Started",
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).primaryColorLight,
           ),
           skip: CustomText(
             title: 'Skip',
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).primaryColorLight,
           ),
           next: Icon(
             Icons.arrow_forward,
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).primaryColorLight,
           ),
           onSkip: () {
             // Route this to login page.
