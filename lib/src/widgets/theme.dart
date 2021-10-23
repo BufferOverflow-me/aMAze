@@ -3,141 +3,113 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
   static ThemeData darkBlueTheme() => ThemeData(
-        primarySwatch: themeOneSwatch,
-        primaryColor: themeOneBg,
-        primaryColorLight: themeOneFg,
+        primarySwatch: darkBlueThemeSwatch,
+        primaryColor: darkBlueThemeBg,
+        primaryColorLight: darkBlueThemeFg,
         fontFamily: GoogleFonts.poppins().fontFamily,
-        backgroundColor: themeOneBg,
+        backgroundColor: darkBlueThemeBg,
         textTheme: TextTheme(
-          headline1: GoogleFonts.poppins(color: themeOneFg, fontSize: 64),
+          headline1: GoogleFonts.poppins(color: darkBlueThemeFg, fontSize: 64),
           headline2: GoogleFonts.poppins(
-            color: themeOneFg,
+            color: darkBlueThemeFg,
             fontSize: 48,
             fontWeight: FontWeight.bold,
             height: 1,
           ),
-          headline3: GoogleFonts.poppins(color: themeOneFg, fontSize: 36),
+          headline3: GoogleFonts.poppins(color: darkBlueThemeFg, fontSize: 36),
           headline4: GoogleFonts.poppins(
-              color: themeOneFg, fontSize: 24, fontWeight: FontWeight.w700),
+              color: darkBlueThemeFg,
+              fontSize: 24,
+              fontWeight: FontWeight.w700),
           headline5: GoogleFonts.poppins(
-            color: themeOneFg,
+            color: darkBlueThemeFg,
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
           headline6: GoogleFonts.poppins(
-              color: themeOneFg, fontSize: 14, fontWeight: FontWeight.w600),
-          bodyText1: GoogleFonts.poppins(color: themeOneFg, fontSize: 12),
-          bodyText2: GoogleFonts.poppins(color: themeOneFg),
-          button: GoogleFonts.poppins(color: themeOneFg),
-          caption: GoogleFonts.poppins(color: themeOneFg),
-          overline: GoogleFonts.poppins(color: themeOneFg),
-          subtitle1: GoogleFonts.poppins(color: themeOneFg),
-          subtitle2: GoogleFonts.poppins(color: themeOneFg),
+              color: darkBlueThemeFg,
+              fontSize: 14,
+              fontWeight: FontWeight.w600),
+          bodyText1: GoogleFonts.poppins(color: darkBlueThemeFg, fontSize: 12),
+          bodyText2: GoogleFonts.poppins(color: darkBlueThemeFg),
+          button: GoogleFonts.poppins(color: darkBlueThemeFg),
+          caption: GoogleFonts.poppins(color: darkBlueThemeFg),
+          overline: GoogleFonts.poppins(color: darkBlueThemeFg),
+          subtitle1: GoogleFonts.poppins(color: darkBlueThemeFg),
+          subtitle2: GoogleFonts.poppins(color: darkBlueThemeFg),
         ),
-        scaffoldBackgroundColor: themeOneBg,
-        cardColor: themeOneFg,
+        scaffoldBackgroundColor: darkBlueThemeBg,
+        cardColor: darkBlueThemeFg,
         brightness: Brightness.dark,
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            primary: themeOneFg,
-            textStyle: GoogleFonts.poppins(color: themeOneFg),
+            primary: darkBlueThemeFg,
+            textStyle: GoogleFonts.poppins(color: darkBlueThemeFg),
           ),
         ),
-        splashColor: themeOneFg,
+        splashColor: darkBlueThemeFg,
         appBarTheme: AppBarTheme(
-          color: themeOneBg,
+          color: darkBlueThemeBg,
           elevation: 0.0,
-          iconTheme: IconThemeData(color: themeOneFg),
+          iconTheme: IconThemeData(color: darkBlueThemeFg),
         ),
       );
-  static ThemeData purpleLightTheme(BuildContext context) => ThemeData(
-        primarySwatch: themeTwoSwatch,
+
+  static ThemeData greenLightTheme() => ThemeData(
+        primarySwatch: greenThemeSwatch,
+        primaryColor: greenThemeBg,
+        primaryColorLight: greenThemeFg,
         fontFamily: GoogleFonts.poppins().fontFamily,
-        cardColor: Colors.white,
-        appBarTheme: const AppBarTheme(
-          color: Colors.white,
-          elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
-        ),
-      );
-  static ThemeData darkTheme(BuildContext context) => ThemeData(
-        primarySwatch: themeThreeSwatch,
-        primaryColor: themeThreeBg,
-        primaryColorLight: themeThreeFg,
-        fontFamily: GoogleFonts.poppins().fontFamily,
-        cardColor: themeThreeFg,
-        textTheme: TextTheme(
-          headline1: GoogleFonts.poppins(color: themeThreeFg),
-          headline2: GoogleFonts.poppins(color: themeThreeFg),
-          headline3: GoogleFonts.poppins(color: themeThreeFg),
-          headline4: GoogleFonts.poppins(color: themeThreeFg),
-          headline5: GoogleFonts.poppins(color: themeThreeFg),
-          headline6: GoogleFonts.poppins(color: themeThreeFg),
-          bodyText1: GoogleFonts.poppins(color: themeThreeFg),
-          bodyText2: GoogleFonts.poppins(color: themeThreeFg),
-          button: GoogleFonts.poppins(color: themeThreeFg),
-          caption: GoogleFonts.poppins(color: themeThreeFg),
-          overline: GoogleFonts.poppins(color: themeThreeFg),
-          subtitle1: GoogleFonts.poppins(color: themeThreeFg),
-          subtitle2: GoogleFonts.poppins(color: themeThreeFg),
-        ),
-        scaffoldBackgroundColor: themeThreeBg,
-        brightness: Brightness.dark,
+        cardColor: greenThemeBg,
+        iconTheme: IconThemeData(color: greenThemeBg),
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
-          color: themeThreeBg,
+          color: greenThemeFg,
           elevation: 0.0,
-          iconTheme: IconThemeData(color: themeThreeFg),
+          iconTheme: IconThemeData(color: greenThemeFg),
         ),
-      );
-  static ThemeData greenLightTheme(BuildContext context) => ThemeData(
-        primarySwatch: themeFourSwatch,
-        primaryColor: themeFourBg,
-        primaryColorLight: themeFourFg,
-        fontFamily: GoogleFonts.poppins().fontFamily,
-        cardColor: themeFourBg,
-        iconTheme: IconThemeData(color: themeFourBg),
-        scaffoldBackgroundColor: themeFourBg,
+        buttonTheme: ButtonThemeData(
+          buttonColor: greenThemeFg,
+          textTheme: ButtonTextTheme.primary,
+        ),
         textTheme: TextTheme(
-          headline1: GoogleFonts.poppins(color: themeFourFg, fontSize: 64),
+          headline1: GoogleFonts.poppins(color: greenThemeFg, fontSize: 64),
           headline2: GoogleFonts.poppins(
-            color: themeFourFg,
+            color: greenThemeFg,
             fontSize: 48,
             fontWeight: FontWeight.bold,
             height: 1,
           ),
-          headline3: GoogleFonts.poppins(color: themeFourFg, fontSize: 36),
+          headline3: GoogleFonts.poppins(color: greenThemeFg, fontSize: 36),
           headline4: GoogleFonts.poppins(
-              color: themeFourFg, fontSize: 24, fontWeight: FontWeight.w700),
+              color: greenThemeFg, fontSize: 24, fontWeight: FontWeight.w700),
           headline5: GoogleFonts.poppins(
-            color: themeFourFg,
+            color: greenThemeFg,
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
           headline6: GoogleFonts.poppins(
-              color: themeOneFg, fontSize: 14, fontWeight: FontWeight.w600),
-          bodyText1: GoogleFonts.poppins(color: themeFourFg, fontSize: 12),
-          bodyText2: GoogleFonts.poppins(color: themeFourFg),
-          button: GoogleFonts.poppins(color: themeFourFg),
-          caption: GoogleFonts.poppins(color: themeFourFg),
-          overline: GoogleFonts.poppins(color: themeFourFg),
-          subtitle1: GoogleFonts.poppins(color: themeFourFg),
-          subtitle2: GoogleFonts.poppins(color: themeFourFg),
-        ),
-        appBarTheme: AppBarTheme(
-          color: themeFourFg,
-          elevation: 0.0,
-          iconTheme: IconThemeData(color: themeFourFg),
+              color: darkBlueThemeFg,
+              fontSize: 14,
+              fontWeight: FontWeight.w600),
+          bodyText1: GoogleFonts.poppins(color: greenThemeFg, fontSize: 12),
+          bodyText2: GoogleFonts.poppins(color: greenThemeFg),
+          button: GoogleFonts.poppins(color: greenThemeFg),
+          caption: GoogleFonts.poppins(color: greenThemeFg),
+          overline: GoogleFonts.poppins(color: greenThemeFg),
+          subtitle1: GoogleFonts.poppins(color: greenThemeFg),
+          subtitle2: GoogleFonts.poppins(color: greenThemeFg),
         ),
       );
 
   // Colors
 
   // Theme 1
-  static Color themeOneBg = const Color(0xFF22223B);
-  static Color themeOneFg = const Color(0xFFF2E9E4);
+  static Color darkBlueThemeBg = const Color(0xFF22223B);
+  static Color darkBlueThemeFg = const Color(0xFFF2E9E4);
   // Primary Swatch
-  static const MaterialColor themeOneSwatch = MaterialColor(
-    _themeOnePrimaryValue,
+  static const MaterialColor darkBlueThemeSwatch = MaterialColor(
+    _darkBlueThemePrimaryValue,
     <int, Color>{
       50: Color(0xFFECEFF1),
       100: Color(0xFFCFD8DC),
@@ -148,65 +120,65 @@ class MyTheme {
       600: Color(0xFF546E7A),
       700: Color(0xFF455A64),
       800: Color(0xFF37474F),
-      900: Color(_themeOnePrimaryValue),
+      900: Color(_darkBlueThemePrimaryValue),
     },
   );
-  static const int _themeOnePrimaryValue = 0xFF22223B;
+  static const int _darkBlueThemePrimaryValue = 0xFF22223B;
 
-  // Theme 2
-  static Color themeTwoBg = const Color(0xFF6154C4);
-  static Color themeTwoFg = const Color(0xFFDDF2C6);
-  // Primary Swatch
-  static const MaterialColor themeTwoSwatch = MaterialColor(
-    _themeOnePrimaryValue,
-    <int, Color>{
-      50: Color(0xFFEDE7F6),
-      100: Color(0xFFD1C4E9),
-      200: Color(0xFFB39DDB),
-      300: Color(0xFF9575CD),
-      400: Color(0xFF7E57C2),
-      500: Color(_themetwoPrimaryValue),
-      600: Color(0xFF673AB7),
-      700: Color(0xFF5E35B1),
-      800: Color(0xFF512DA8),
-      900: Color(0xFF4527A0),
-    },
-  );
-  static const int _themetwoPrimaryValue = 0xFF6154C4;
+  // // Theme 2
+  // static Color themeTwoBg = const Color(0xFF6154C4);
+  // static Color themeTwoFg = const Color(0xFFDDF2C6);
+  // // Primary Swatch
+  // static const MaterialColor themeTwoSwatch = MaterialColor(
+  //   _darkBlueThemePrimaryValue,
+  //   <int, Color>{
+  //     50: Color(0xFFEDE7F6),
+  //     100: Color(0xFFD1C4E9),
+  //     200: Color(0xFFB39DDB),
+  //     300: Color(0xFF9575CD),
+  //     400: Color(0xFF7E57C2),
+  //     500: Color(_themetwoPrimaryValue),
+  //     600: Color(0xFF673AB7),
+  //     700: Color(0xFF5E35B1),
+  //     800: Color(0xFF512DA8),
+  //     900: Color(0xFF4527A0),
+  //   },
+  // );
+  // static const int _themetwoPrimaryValue = 0xFF6154C4;
 
-  // Theme 3
-  static Color themeThreeBg = const Color(0xFF263238);
-  static Color themeThreeFg = const Color(0xFFFFFFFF);
-  // Primary Swatch
-  static const MaterialColor themeThreeSwatch = MaterialColor(
-    _themeOnePrimaryValue,
-    <int, Color>{
-      50: Color(0xFFECEFF1),
-      100: Color(0xFFCFD8DC),
-      200: Color(0xFFB0BEC5),
-      300: Color(0xFF90A4AE),
-      400: Color(0xFF78909C),
-      500: Color(0xFF607D8B),
-      600: Color(0xFF546E7A),
-      700: Color(0xFF455A64),
-      800: Color(0xFF37474F),
-      900: Color(_themeThreePrimaryValue),
-    },
-  );
-  static const int _themeThreePrimaryValue = 0xFF263238;
+  // // Theme 3
+  // static Color themeThreeBg = const Color(0xFF263238);
+  // static Color themeThreeFg = const Color(0xFFFFFFFF);
+  // // Primary Swatch
+  // static const MaterialColor themeThreeSwatch = MaterialColor(
+  //   _darkBlueThemePrimaryValue,
+  //   <int, Color>{
+  //     50: Color(0xFFECEFF1),
+  //     100: Color(0xFFCFD8DC),
+  //     200: Color(0xFFB0BEC5),
+  //     300: Color(0xFF90A4AE),
+  //     400: Color(0xFF78909C),
+  //     500: Color(0xFF607D8B),
+  //     600: Color(0xFF546E7A),
+  //     700: Color(0xFF455A64),
+  //     800: Color(0xFF37474F),
+  //     900: Color(_themeThreePrimaryValue),
+  //   },
+  // );
+  // static const int _themeThreePrimaryValue = 0xFF263238;
 
-  // Theme 4
-  static Color themeFourBg = const Color(0xFF1EA242);
-  static Color themeFourBg1 = const Color(0xFFE5F8E1);
-  static Color themeFourFg = const Color(0xFFFFFFFF);
-  static Color themeFourFg1 = const Color(0xFF1EA242);
+  // Light green theme
+  static Color greenThemeBg = const Color(0xFF1EA242);
+  static Color greenThemeBg1 = const Color(0xFFE5F8E1);
+  static Color greenThemeFg1 = const Color(0xFFFFFFFF);
+  static Color greenThemeFg = const Color(0xFF1EA242);
   // Primary Swatch
-  static const MaterialColor themeFourSwatch = MaterialColor(
-    _themeOnePrimaryValue,
+  static const MaterialColor greenThemeSwatch = MaterialColor(
+    _darkBlueThemePrimaryValue,
     <int, Color>{
       50: Color(0xFFE8F5E9),
       100: Color(0xFFC8E6C9),
-      200: Color(_themeFourPrimaryValue),
+      200: Color(_greenThemePrimaryValue),
       300: Color(0xFF81C784),
       400: Color(0xFF66BB6A),
       500: Color(0xFF4CAF50),
@@ -216,5 +188,44 @@ class MyTheme {
       900: Color(0xFF1B5E20),
     },
   );
-  static const int _themeFourPrimaryValue = 0xFFE5F8E1;
+  static const int _greenThemePrimaryValue = 0xFFE5F8E1;
+}
+
+/// Use this for implemeting custom text with less hastle.
+class CustomText extends StatelessWidget {
+  const CustomText({
+    Key? key,
+    required this.title,
+    this.color = Colors.black,
+    this.fontSize = 16,
+    this.fontWeight = FontWeight.w500,
+    this.fontStyle = FontStyle.normal,
+    this.textAlign = TextAlign.left,
+    this.maxLines = 1,
+    this.overflow = TextOverflow.ellipsis,
+  }) : super(key: key);
+  final String title;
+  final Color color;
+  final double fontSize;
+  final FontWeight fontWeight;
+  final FontStyle fontStyle;
+  final int maxLines;
+  final TextOverflow overflow;
+  final TextAlign textAlign;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        fontStyle: fontStyle,
+      ),
+      maxLines: maxLines,
+      overflow: overflow,
+      textAlign: textAlign,
+    );
+  }
 }

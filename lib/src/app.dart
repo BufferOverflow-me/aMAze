@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
         animation: settingsController,
         builder: (BuildContext context, Widget? child) {
           return MaterialApp(
-            theme: MyTheme.greenLightTheme(context),
-            darkTheme: MyTheme.darkBlueTheme(),
+            theme: MyTheme.greenLightTheme(),
+            darkTheme: MyTheme.greenLightTheme(),
             themeMode: settingsController.themeMode,
             debugShowCheckedModeBanner: false,
             home: const AmazeIntroductionPage(),

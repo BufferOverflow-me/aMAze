@@ -1,3 +1,4 @@
+import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -106,20 +107,24 @@ class AmazeIntroductionPage extends StatelessWidget {
             ),
           ],
           dotsDecorator: getDotDecorator(context),
-          done: Text(
-            "Get Started",
-            style: Theme.of(context).textTheme.headline6,
+          done: CustomText(
+            title: "Get Started",
+            color: Theme.of(context).primaryColor,
           ),
-          skip: Text(
-            "Skip",
-            style: Theme.of(context).textTheme.headline6,
+          skip: CustomText(
+            title: 'Skip',
+            color: Theme.of(context).primaryColor,
           ),
-          next: const Icon(
+          next: Icon(
             Icons.arrow_forward,
-            color: Colors.white,
+            color: Theme.of(context).primaryColor,
           ),
-          onSkip: () {},
-          onDone: () {},
+          onSkip: () {
+            // Route this to login page.
+          },
+          onDone: () {
+            // Route this to login page.
+          },
           showDoneButton: true,
           showSkipButton: true,
           showNextButton: true,
