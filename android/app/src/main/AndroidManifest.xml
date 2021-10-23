@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bufferoverflow.fitness">
    <application
-        android:label="fitness_app"
+        android:label="aMAze"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

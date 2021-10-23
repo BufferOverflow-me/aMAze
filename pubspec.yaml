@@ -28,6 +28,7 @@ dev_dependencies:
   
   flutter_lints: ^1.0.0
   change_app_package_name: ^1.0.0
+  flutter_native_splash: ^1.2.4
 
 flutter:
   uses-material-design: true
@@ -36,6 +37,13 @@ flutter:
     - assets/
     - assets/images/
     - assets/svg/
+
+flutter_native_splash:
+  color: "#1EA242"
+  image: "assets/logo.png"
+  color_dark: "#22223B"
+  android: true
+  ios: true
 
   
   
