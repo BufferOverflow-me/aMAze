@@ -28,13 +28,6 @@ class _AuthPageState extends State<AuthPage>
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-            // title: Padding(
-            //   padding: const EdgeInsets.only(top: 16.0),
-            //   child: Text(
-            //     MyTheme.appName,
-            //     style: Theme.of(context).textTheme.headline1,
-            //   ),
-            // ),
             bottom: PreferredSize(
           preferredSize: Size.fromHeight(size.height * 0.15),
           child: Padding(
