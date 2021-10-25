@@ -7,37 +7,38 @@ class MyTheme {
         primarySwatch: darkBlueThemeSwatch,
         primaryColor: darkBlueThemeBg,
         primaryColorLight: darkBlueThemeFg,
-        fontFamily: GoogleFonts.poppins().fontFamily,
+        primaryColorDark: darkBlueThemeFields,
+        fontFamily: GoogleFonts.openSans().fontFamily,
         backgroundColor: darkBlueThemeBg,
         textTheme: TextTheme(
-          headline1: GoogleFonts.poppins(color: darkBlueThemeFg, fontSize: 64),
-          headline2: GoogleFonts.poppins(
+          headline1: GoogleFonts.openSans(color: darkBlueThemeFg, fontSize: 64),
+          headline2: GoogleFonts.openSans(
             color: darkBlueThemeFg,
             fontSize: 48,
             fontWeight: FontWeight.bold,
             height: 1,
           ),
-          headline3: GoogleFonts.poppins(color: darkBlueThemeFg, fontSize: 36),
-          headline4: GoogleFonts.poppins(
+          headline3: GoogleFonts.openSans(color: darkBlueThemeFg, fontSize: 36),
+          headline4: GoogleFonts.openSans(
               color: darkBlueThemeFg,
               fontSize: 24,
               fontWeight: FontWeight.w700),
-          headline5: GoogleFonts.poppins(
+          headline5: GoogleFonts.openSans(
             color: darkBlueThemeFg,
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
-          headline6: GoogleFonts.poppins(
+          headline6: GoogleFonts.openSans(
               color: darkBlueThemeFg,
               fontSize: 14,
               fontWeight: FontWeight.w600),
-          bodyText1: GoogleFonts.poppins(color: darkBlueThemeFg, fontSize: 12),
-          bodyText2: GoogleFonts.poppins(color: darkBlueThemeFg),
-          button: GoogleFonts.poppins(color: darkBlueThemeFg),
-          caption: GoogleFonts.poppins(color: darkBlueThemeFg),
-          overline: GoogleFonts.poppins(color: darkBlueThemeFg),
-          subtitle1: GoogleFonts.poppins(color: darkBlueThemeFg),
-          subtitle2: GoogleFonts.poppins(color: darkBlueThemeFg),
+          bodyText1: GoogleFonts.openSans(color: darkBlueThemeFg, fontSize: 12),
+          bodyText2: GoogleFonts.openSans(color: darkBlueThemeFg),
+          button: GoogleFonts.openSans(color: darkBlueThemeFields),
+          caption: GoogleFonts.openSans(color: darkBlueThemeFg),
+          overline: GoogleFonts.openSans(color: darkBlueThemeFg),
+          subtitle1: GoogleFonts.openSans(color: darkBlueThemeFg),
+          subtitle2: GoogleFonts.openSans(color: darkBlueThemeFg),
         ),
         scaffoldBackgroundColor: darkBlueThemeBg,
         cardColor: darkBlueThemeFg,
@@ -45,7 +46,7 @@ class MyTheme {
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             primary: darkBlueThemeFg,
-            textStyle: GoogleFonts.poppins(color: darkBlueThemeFg),
+            textStyle: GoogleFonts.openSans(color: darkBlueThemeFg),
           ),
         ),
         splashColor: darkBlueThemeFg,
@@ -60,7 +61,7 @@ class MyTheme {
         primarySwatch: greenThemeSwatch,
         primaryColor: greenThemeBg,
         primaryColorLight: greenThemeFg,
-        fontFamily: GoogleFonts.poppins().fontFamily,
+        fontFamily: GoogleFonts.openSans().fontFamily,
         cardColor: greenThemeBg,
         iconTheme: IconThemeData(color: greenThemeBg),
         scaffoldBackgroundColor: Colors.white,
@@ -74,38 +75,39 @@ class MyTheme {
           textTheme: ButtonTextTheme.primary,
         ),
         textTheme: TextTheme(
-          headline1: GoogleFonts.poppins(color: greenThemeFg, fontSize: 64),
-          headline2: GoogleFonts.poppins(
+          headline1: GoogleFonts.openSans(color: greenThemeFg, fontSize: 64),
+          headline2: GoogleFonts.openSans(
             color: greenThemeFg,
             fontSize: 48,
             fontWeight: FontWeight.bold,
             height: 1,
           ),
-          headline3: GoogleFonts.poppins(color: greenThemeFg, fontSize: 36),
-          headline4: GoogleFonts.poppins(
+          headline3: GoogleFonts.openSans(color: greenThemeFg, fontSize: 36),
+          headline4: GoogleFonts.openSans(
               color: greenThemeFg, fontSize: 24, fontWeight: FontWeight.w700),
-          headline5: GoogleFonts.poppins(
+          headline5: GoogleFonts.openSans(
             color: greenThemeFg,
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
-          headline6: GoogleFonts.poppins(
+          headline6: GoogleFonts.openSans(
               color: darkBlueThemeFg,
               fontSize: 14,
               fontWeight: FontWeight.w600),
-          bodyText1: GoogleFonts.poppins(color: greenThemeFg, fontSize: 12),
-          bodyText2: GoogleFonts.poppins(color: greenThemeFg),
-          button: GoogleFonts.poppins(color: greenThemeFg),
-          caption: GoogleFonts.poppins(color: greenThemeFg),
-          overline: GoogleFonts.poppins(color: greenThemeFg),
-          subtitle1: GoogleFonts.poppins(color: greenThemeFg),
-          subtitle2: GoogleFonts.poppins(color: greenThemeFg),
+          bodyText1: GoogleFonts.openSans(color: greenThemeFg, fontSize: 12),
+          bodyText2: GoogleFonts.openSans(color: greenThemeFg),
+          button: GoogleFonts.openSans(color: greenThemeFg),
+          caption: GoogleFonts.openSans(color: greenThemeFg),
+          overline: GoogleFonts.openSans(color: greenThemeFg),
+          subtitle1: GoogleFonts.openSans(color: greenThemeFg),
+          subtitle2: GoogleFonts.openSans(color: greenThemeFg),
         ),
       );
 
   // Colors
 
   // Theme 1
+  static Color darkBlueThemeFields = const Color(0xFF4A4E69);
   static Color darkBlueThemeBg = const Color(0xFF22223B);
   static Color darkBlueThemeFg = const Color(0xFFF2E9E4);
   // Primary Swatch

@@ -1,3 +1,5 @@
+import 'package:fitness_app/src/screens/auth/login_page.dart';
+import 'package:fitness_app/src/screens/auth/sign_up_page.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,18 +28,25 @@ class _AuthPageState extends State<AuthPage>
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-            title: Padding(
-              padding: const EdgeInsets.all(14.0),
-              child: Text(
-                MyTheme.appName,
-                style: Theme.of(context).textTheme.headline1,
-              ),
-            ),
+            // title: Padding(
+            //   padding: const EdgeInsets.only(top: 16.0),
+            //   child: Text(
+            //     MyTheme.appName,
+            //     style: Theme.of(context).textTheme.headline1,
+            //   ),
+            // ),
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(size.height * 0.1),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: TabBar(
+          preferredSize: Size.fromHeight(size.height * 0.15),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  MyTheme.appName,
+                  style: Theme.of(context).textTheme.headline1,
+                ),
+                TabBar(
                   tabs: [
                     Tab(
                       child: Text(
@@ -54,20 +63,15 @@ class _AuthPageState extends State<AuthPage>
                   ],
                   controller: _tabController,
                 ),
-              ),
-            )),
+              ],
+            ),
+          ),
+        )),
         body: TabBarView(
           controller: _tabController,
           children: const [
-            Scaffold(
-                body: Center(
-              child: Text("Login Page"),
-            )),
-            Scaffold(
-              body: Center(
-                child: Text("Register"),
-              ),
-            ),
+            LoginInPage(),
+            SignUpPage(),
           ],
         ),
       ),

@@ -21,6 +21,8 @@ dependencies:
   shared_preferences: ^2.0.8
   google_fonts: ^2.1.0
   introduction_screen: ^2.1.0
+  font_awesome_flutter: ^9.2.0
+  email_validator: ^2.0.1
 
 dev_dependencies:
   flutter_test:
