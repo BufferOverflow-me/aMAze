@@ -1,5 +1,4 @@
 import 'package:fitness_app/src/screens/auth/auth_page.dart';
-import 'package:fitness_app/src/screens/start/intro_page.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
