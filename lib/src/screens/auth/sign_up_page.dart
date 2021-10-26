@@ -92,6 +92,16 @@ class _SignUpPageState extends State<SignUpPage> {
       ];
 
   @override
+  void dispose() {
+    _NameController.dispose();
+    _EmailController.dispose();
+    _PasswordController.dispose();
+    _ConfirmPasswordController.dispose();
+    _PhoneController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
