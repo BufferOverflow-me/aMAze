@@ -49,14 +49,17 @@ class _LoginInPageState extends State<LoginInPage> {
                   ),
                   child: TextFormField(
                     controller: _emailController,
-                    style: TextStyle(fontSize: size.height * 0.03),
+                    style: TextStyle(fontSize: size.height * 0.02),
                     obscureText: false,
                     cursorColor: Theme.of(context).primaryColorLight,
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.all(10),
                       enabled: true,
                       label: const Text("Email"),
-                      labelStyle: Theme.of(context).textTheme.headline4,
+                      labelStyle: TextStyle(
+                        fontSize: size.height * 0.025,
+                        color: Theme.of(context).primaryColorLight,
+                      ),
                       fillColor: Theme.of(context).primaryColorLight,
                       alignLabelWithHint: true,
                       focusedBorder: OutlineInputBorder(
@@ -143,6 +146,7 @@ class MyTextField extends StatelessWidget {
   final TextEditingController controller;
   final String label;
   final bool isobsecure;
+  final TextInputType keyboardType;
   const MyTextField({
     Key? key,
     required this.hint,
@@ -150,6 +154,7 @@ class MyTextField extends StatelessWidget {
     required this.controller,
     required this.label,
     this.isobsecure = false,
+    this.keyboardType = TextInputType.text,
   }) : super(key: key);
 
   @override
@@ -163,7 +168,10 @@ class MyTextField extends StatelessWidget {
         ),
         child: TextFormField(
           controller: controller,
-          style: TextStyle(fontSize: MediaQuery.of(context).size.height * 0.03),
+          keyboardType: keyboardType,
+          style: TextStyle(
+            fontSize: MediaQuery.of(context).size.height * 0.02,
+          ),
           obscureText: isobsecure,
           cursorColor: Theme.of(context).primaryColorLight,
           decoration: InputDecoration(
@@ -171,7 +179,10 @@ class MyTextField extends StatelessWidget {
             enabled: true,
             label: Text(label),
             alignLabelWithHint: true,
-            labelStyle: Theme.of(context).textTheme.headline4,
+            labelStyle: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.025,
+              color: Theme.of(context).primaryColorLight,
+            ),
             fillColor: Theme.of(context).primaryColorLight,
             // hintText: hint,
             focusedBorder: OutlineInputBorder(
