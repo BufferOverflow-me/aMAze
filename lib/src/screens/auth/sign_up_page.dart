@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignUpPage extends StatefulWidget {
-  SignUpPage({Key? key}) : super(key: key);
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
@@ -15,11 +15,12 @@ class _SignUpPageState extends State<SignUpPage> {
 
   int currentStep = 0;
 
-  TextEditingController _NameController = TextEditingController();
-  TextEditingController _EmailController = TextEditingController();
-  TextEditingController _PasswordController = TextEditingController();
-  TextEditingController _ConfirmPasswordController = TextEditingController();
-  TextEditingController _PhoneController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
 
   List<Step> getSteps(context) => [
         Step(
@@ -28,7 +29,7 @@ class _SignUpPageState extends State<SignUpPage> {
             style: Theme.of(context).textTheme.headline5,
           ),
           content: MyTextField(
-            controller: _NameController,
+            controller: nameController,
             hint: "Name",
             label: "Name",
             validatorString: "Name",
@@ -41,7 +42,7 @@ class _SignUpPageState extends State<SignUpPage> {
             style: Theme.of(context).textTheme.headline5,
           ),
           content: MyTextField(
-            controller: _EmailController,
+            controller: emailController,
             hint: "Email",
             label: "Email",
             validatorString: "Email",
@@ -55,7 +56,7 @@ class _SignUpPageState extends State<SignUpPage> {
             style: Theme.of(context).textTheme.headline5,
           ),
           content: MyTextField(
-            controller: _PhoneController,
+            controller: phoneController,
             hint: "Phone",
             label: "Phone",
             validatorString: "Phone",
@@ -69,7 +70,7 @@ class _SignUpPageState extends State<SignUpPage> {
             style: Theme.of(context).textTheme.headline5,
           ),
           content: MyTextField(
-            controller: _PasswordController,
+            controller: passwordController,
             hint: "Password",
             label: "Password",
             validatorString: "Password",
@@ -82,7 +83,7 @@ class _SignUpPageState extends State<SignUpPage> {
             style: Theme.of(context).textTheme.headline5,
           ),
           content: MyTextField(
-            controller: _ConfirmPasswordController,
+            controller: confirmPasswordController,
             hint: "Confirm Password",
             label: "Confirm Password",
             validatorString: "Confirm Password",
@@ -93,11 +94,11 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   void dispose() {
-    _NameController.dispose();
-    _EmailController.dispose();
-    _PasswordController.dispose();
-    _ConfirmPasswordController.dispose();
-    _PhoneController.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    phoneController.dispose();
     super.dispose();
   }
 
@@ -113,7 +114,7 @@ class _SignUpPageState extends State<SignUpPage> {
             onStepContinue: () {
               switch (currentStep) {
                 case 0:
-                  if (_NameController.text.isNotEmpty) {
+                  if (nameController.text.isNotEmpty) {
                     currentStep = currentStep + 1;
                     setState(() {});
                   } else {
@@ -121,11 +122,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   }
                   break;
                 case 1:
-                  if (_EmailController.text.isNotEmpty &&
-                      _EmailController.text.contains(
+                  if (emailController.text.isNotEmpty &&
+                      emailController.text.contains(
                         '@',
                       ) &&
-                      _EmailController.text.contains('.')) {
+                      emailController.text.contains('.')) {
                     currentStep = currentStep + 1;
                     setState(() {});
                   } else {
@@ -133,7 +134,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   }
                   break;
                 case 2:
-                  if (_PhoneController.text.length > 10) {
+                  if (phoneController.text.length > 10) {
                     currentStep = currentStep + 1;
                     setState(() {});
                   } else {
@@ -141,7 +142,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   }
                   break;
                 case 3:
-                  if (_PasswordController.text.length > 5) {
+                  if (passwordController.text.length > 5) {
                     currentStep = currentStep + 1;
                     setState(() {});
                   } else {
@@ -149,9 +150,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   }
                   break;
                 case 4:
-                  if (_PasswordController.text.isNotEmpty &&
-                      _PasswordController.text ==
-                          _ConfirmPasswordController.text) {
+                  if (passwordController.text.isNotEmpty &&
+                      passwordController.text ==
+                          confirmPasswordController.text) {
                     showSnackBar("Done", context);
                     setState(() {});
                   } else {

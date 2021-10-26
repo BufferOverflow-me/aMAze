@@ -2,7 +2,6 @@ import 'package:fitness_app/src/screens/auth/login_page.dart';
 import 'package:fitness_app/src/screens/auth/sign_up_page.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -62,7 +61,7 @@ class _AuthPageState extends State<AuthPage>
         )),
         body: TabBarView(
           controller: _tabController,
-          children: [
+          children: const [
             LoginInPage(),
             SignUpPage(),
           ],
