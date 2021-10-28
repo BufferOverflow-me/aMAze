@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/src/screens/auth/auth_page.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
             darkTheme: MyTheme.darkBlueTheme(),
             themeMode: settingsController.themeMode,
             debugShowCheckedModeBanner: false,
-            home: const AuthPage(),
+            // home: FutureBuilder(
+            //   future: FirebaseAuth.instance,
+            // ),
           );
         });
   }
