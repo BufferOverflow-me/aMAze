@@ -1,5 +1,7 @@
 import 'package:fitness_app/src/screens/auth/login_page.dart';
 import 'package:fitness_app/src/screens/auth/widgets/auth_buttons.dart';
+import 'package:fitness_app/src/screens/homepage.dart';
+import 'package:fitness_app/src/services/flutterfire.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -20,7 +22,6 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
 
   List<Step> getSteps(context) => [
         Step(
@@ -50,20 +51,20 @@ class _SignUpPageState extends State<SignUpPage> {
             isobsecure: false,
           ),
         ),
-        Step(
-          title: Text(
-            'Phone',
-            style: Theme.of(context).textTheme.headline5,
-          ),
-          content: MyTextField(
-            controller: phoneController,
-            hint: "Phone",
-            label: "Phone",
-            validatorString: "Phone",
-            keyboardType: TextInputType.number,
-            isobsecure: false,
-          ),
-        ),
+        // Step(
+        //   title: Text(
+        //     'Phone',
+        //     style: Theme.of(context).textTheme.headline5,
+        //   ),
+        //   content: MyTextField(
+        //     controller: phoneController,
+        //     hint: "Phone",
+        //     label: "Phone",
+        //     validatorString: "Phone",
+        //     keyboardType: TextInputType.number,
+        //     isobsecure: false,
+        //   ),
+        // ),
         Step(
           title: Text(
             'Password',
@@ -98,7 +99,7 @@ class _SignUpPageState extends State<SignUpPage> {
     emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
-    phoneController.dispose();
+    // phoneController.dispose();
     super.dispose();
   }
 
@@ -111,7 +112,14 @@ class _SignUpPageState extends State<SignUpPage> {
           Stepper(
             currentStep: currentStep,
             steps: getSteps(context),
-            onStepContinue: () {
+            onStepCancel: () {
+              if (currentStep > 0) {
+                setState(() {
+                  currentStep -= 1;
+                });
+              }
+            },
+            onStepContinue: () async {
               switch (currentStep) {
                 case 0:
                   if (nameController.text.isNotEmpty) {
@@ -133,15 +141,15 @@ class _SignUpPageState extends State<SignUpPage> {
                     showSnackBar("Please enter a valid email", context);
                   }
                   break;
+                // case 2:
+                //   if (phoneController.text.length > 10) {
+                //     currentStep = currentStep + 1;
+                //     setState(() {});
+                //   } else {
+                //     showSnackBar("Please enter a valid Phone Number", context);
+                //   }
+                //   break;
                 case 2:
-                  if (phoneController.text.length > 10) {
-                    currentStep = currentStep + 1;
-                    setState(() {});
-                  } else {
-                    showSnackBar("Please enter a valid Phone Number", context);
-                  }
-                  break;
-                case 3:
                   if (passwordController.text.length > 5) {
                     currentStep = currentStep + 1;
                     setState(() {});
@@ -149,11 +157,37 @@ class _SignUpPageState extends State<SignUpPage> {
                     showSnackBar("Please enter atleast 5 characters", context);
                   }
                   break;
-                case 4:
+                case 3:
                   if (passwordController.text.isNotEmpty &&
                       passwordController.text ==
                           confirmPasswordController.text) {
-                    showSnackBar("Done", context);
+                    bool isRegistered = await register(nameController.text,
+                        emailController.text, passwordController.text);
+                    if (isRegistered == true) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()));
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text("Error"),
+                            content: const Text(
+                                "Something gone wrong, please try again"),
+                            actions: <Widget>[
+                              TextButton(
+                                child: const Text("Ok"),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              )
+                            ],
+                          );
+                        },
+                      );
+                    }
                     setState(() {});
                   } else {
                     showSnackBar("The password doesn't matches", context);

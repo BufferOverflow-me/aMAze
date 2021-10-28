@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:fitness_app/src/screens/auth/widgets/auth_buttons.dart';
+import 'package:fitness_app/src/services/flutterfire.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -104,7 +105,9 @@ class _LoginInPageState extends State<LoginInPage> {
                 ),
                 Center(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      signIn(_emailController.text, _passwordController.text);
+                    },
                     child: Container(
                       height: size.height * 0.065,
                       width: size.width * 0.85,
