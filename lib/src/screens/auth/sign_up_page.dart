@@ -161,9 +161,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   if (passwordController.text.isNotEmpty &&
                       passwordController.text ==
                           confirmPasswordController.text) {
-                    bool isRegistered = await register(nameController.text,
-                        emailController.text, passwordController.text);
-                    if (isRegistered == true) {
+                    var isRegistered = await FlutterFire().register(
+                        nameController.text,
+                        emailController.text,
+                        passwordController.text);
+                    if (isRegistered == null) {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -200,7 +202,15 @@ class _SignUpPageState extends State<SignUpPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              AuthButton(icon: FontAwesomeIcons.google, onPressed: () {}),
+              AuthButton(
+                  icon: FontAwesomeIcons.google,
+                  onPressed: () async {
+                    FlutterFire().signInWithGoogle().then((value) =>
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomePage())));
+                  }),
               AuthButton(icon: FontAwesomeIcons.facebook, onPressed: () {}),
               AuthButton(icon: FontAwesomeIcons.phone, onPressed: () {}),
             ],

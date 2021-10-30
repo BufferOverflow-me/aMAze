@@ -1,9 +1,11 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:fitness_app/src/screens/auth/widgets/auth_buttons.dart';
+import 'package:fitness_app/src/screens/homepage.dart';
 import 'package:fitness_app/src/services/flutterfire.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class LoginInPage extends StatefulWidget {
   const LoginInPage({Key? key}) : super(key: key);
@@ -106,7 +108,23 @@ class _LoginInPageState extends State<LoginInPage> {
                 Center(
                   child: InkWell(
                     onTap: () {
-                      signIn(_emailController.text, _passwordController.text);
+                      FlutterFire()
+                          .signIn(
+                              _emailController.text, _passwordController.text)
+                          .then((value) {
+                        if (value == null) {
+                          // Login successful
+                          // replace the route
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage()));
+                        } else {
+                          // Login failed
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Login Failed')));
+                        }
+                      });
                     },
                     child: Container(
                       height: size.height * 0.065,
@@ -128,7 +146,11 @@ class _LoginInPageState extends State<LoginInPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    AuthButton(icon: FontAwesomeIcons.google, onPressed: () {}),
+                    AuthButton(
+                        icon: FontAwesomeIcons.google,
+                        onPressed: () {
+                          context.read<FlutterFire>().signInWithGoogle();
+                        }),
                     AuthButton(
                         icon: FontAwesomeIcons.facebook, onPressed: () {}),
                     AuthButton(icon: FontAwesomeIcons.phone, onPressed: () {}),
