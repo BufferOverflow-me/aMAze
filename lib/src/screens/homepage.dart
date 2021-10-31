@@ -1,8 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_app/src/screens/auth/auth_page.dart';
-import 'package:fitness_app/src/services/flutterfire.dart';
+import 'package:fitness_app/src/views/read_example.dart';
+import 'package:fitness_app/src/views/write_example.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,17 +15,32 @@ class _HomePageState extends State<HomePage> {
     // Size size = MediaQuery.of(context).size;
     return Scaffold(
         body: Center(
-      child: Column(
-        children: [
-          Text(FirebaseAuth.instance.currentUser.toString()),
-          TextButton(
-              onPressed: () {
-                context.read<FlutterFire>().signOut();
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const AuthPage()));
-              },
-              child: const Text('Logout'))
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Spacer(),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ReadExample()));
+                },
+                child: const Text('Read Example')),
+            const Spacer(),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WriteExample()));
+                },
+                child: const Text('Write Example')),
+            const Spacer(),
+          ],
+        ),
       ),
     ));
   }
