@@ -3,6 +3,7 @@ import 'package:fitness_app/src/app.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/settings/settings_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   // ensure that widgets are being initialized.
@@ -18,9 +19,16 @@ void main() async {
 
   // Initialize firebase
   await Firebase.initializeApp();
-
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
-  runApp(MyApp(settingsController: settingsController));
+
+  // Set Orientation
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(MyApp(
+    settingsController: settingsController,
+  ));
 }

@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -56,9 +55,7 @@ class _WriteExampleState extends State<WriteExample> {
               ElevatedButton(
                   onPressed: () async {
                     try {
-                      await workout
-                          .child('PhotoUrl')
-                          .set('https://picsum.photos/seed/picsum/100/300');
+                      await workout.child('Workouts').child('Cardio').set({});
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: const Text('Set Workout'),

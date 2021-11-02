@@ -5,7 +5,6 @@ import 'package:fitness_app/src/services/flutterfire.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 
 class LoginInPage extends StatefulWidget {
   const LoginInPage({Key? key}) : super(key: key);
@@ -149,7 +148,7 @@ class _LoginInPageState extends State<LoginInPage> {
                     AuthButton(
                         icon: FontAwesomeIcons.google,
                         onPressed: () {
-                          context.read<FlutterFire>().signInWithGoogle();
+                          FlutterFire().signInWithGoogle();
                         }),
                     AuthButton(
                         icon: FontAwesomeIcons.facebook, onPressed: () {}),
