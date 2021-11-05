@@ -29,7 +29,7 @@ class ApplicationStateNotifier extends ChangeNotifier {
   }
 
   ApplicationLoginState _loginState = ApplicationLoginState.loggedOut;
-  ApplicationLoginState get loginstate => _loginState;
+  ApplicationLoginState get loginState => _loginState;
 
   String? _email;
   String? get email => _email;
@@ -74,6 +74,21 @@ class ApplicationStateNotifier extends ChangeNotifier {
       var credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
       await credential.user!.updateDisplayName(displayName);
+    } on FirebaseAuthException catch (e) {
+      errorCallback(e);
+    }
+  }
+
+  void signInWithEmailAndPassword(
+    String email,
+    String password,
+    void Function(FirebaseAuthException e) errorCallback,
+  ) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
     } on FirebaseAuthException catch (e) {
       errorCallback(e);
     }

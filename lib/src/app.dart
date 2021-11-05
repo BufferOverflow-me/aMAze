@@ -1,6 +1,9 @@
+import 'package:fitness_app/src/screens/auth/auth_page.dart';
+import 'package:fitness_app/src/services/authentication.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key, required this.settingsController}) : super(key: key);
@@ -16,14 +19,14 @@ class MyApp extends StatelessWidget {
             darkTheme: MyTheme.darkBlueTheme(),
             themeMode: settingsController.themeMode,
             debugShowCheckedModeBanner: false,
-            home: const HomePage(),
+            home: const Auth(),
           );
         });
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Auth extends StatelessWidget {
+  const Auth({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,20 @@ class HomePage extends StatelessWidget {
         title: const Text("aMAze"),
       ),
       body: ListView(
-        children: [],
+        children: [
+          Consumer<ApplicationStateNotifier>(
+              builder: (context, appState, child) => Authentication(
+                    email: appState.email,
+                    loginState: appState.loginState,
+                    startLoginFlow: appState.startLoginFlow,
+                    verifyEmail: appState.verifyEmail,
+                    signInWithEmailAndPassword:
+                        appState.signInWithEmailAndPassword,
+                    cancelRegistration: appState.cancelRegistration,
+                    registerAccount: appState.registerAccount,
+                    signOut: appState.signOut,
+                  )),
+        ],
       ),
     );
   }
