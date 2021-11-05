@@ -1,4 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors
 import 'package:fitness_app/src/screens/homepage.dart';
 import 'package:fitness_app/src/services/authentication.dart';
 import 'package:flutter/material.dart';
@@ -136,7 +135,7 @@ void _showErrorDialog(BuildContext context, String title, Exception e) {
 }
 
 class EmailForm extends StatefulWidget {
-  const EmailForm({required this.callback});
+  const EmailForm({required this.callback, Key? key}) : super(key: key);
   final void Function(String email) callback;
   @override
   _EmailFormState createState() => _EmailFormState();
@@ -204,7 +203,8 @@ class RegisterForm extends StatefulWidget {
     required this.registerAccount,
     required this.cancel,
     required this.email,
-  });
+    Key? key,
+  }) : super(key: key);
   final String email;
   final void Function(String email, String displayName, String password)
       registerAccount;
@@ -322,7 +322,8 @@ class PasswordForm extends StatefulWidget {
   const PasswordForm({
     required this.login,
     required this.email,
-  });
+    Key? key,
+  }) : super(key: key);
   final String email;
   final void Function(String email, String password) login;
   @override

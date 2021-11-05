@@ -1,9 +1,7 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
-  const Header(this.heading);
+  const Header(this.heading, {Key? key}) : super(key: key);
   final String heading;
 
   @override
@@ -17,7 +15,7 @@ class Header extends StatelessWidget {
 }
 
 class Paragraph extends StatelessWidget {
-  const Paragraph(this.content);
+  const Paragraph(this.content, {Key? key}) : super(key: key);
   final String content;
   @override
   Widget build(BuildContext context) => Padding(
@@ -30,7 +28,7 @@ class Paragraph extends StatelessWidget {
 }
 
 class IconAndDetail extends StatelessWidget {
-  const IconAndDetail(this.icon, this.detail);
+  const IconAndDetail(this.icon, this.detail, {Key? key}) : super(key: key);
   final IconData icon;
   final String detail;
 
@@ -51,7 +49,11 @@ class IconAndDetail extends StatelessWidget {
 }
 
 class StyledButton extends StatelessWidget {
-  const StyledButton({required this.child, required this.onPressed});
+  const StyledButton({
+    required this.child,
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
   final Widget child;
   final void Function() onPressed;
 
