@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
-  static String appName = "aMAze";
+  static String appName = 'aMAze';
   static ThemeData darkBlueTheme() => ThemeData(
         primarySwatch: darkBlueThemeSwatch,
         primaryColor: darkBlueThemeBg,

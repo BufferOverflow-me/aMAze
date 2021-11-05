@@ -48,7 +48,7 @@ class _WriteExampleState extends State<WriteExample> {
                         ),
                       );
                     } catch (e) {
-                      throw (e.toString());
+                      debugPrint(e.toString());
                     }
                   },
                   child: const Text('Perform Set Operation')),
@@ -81,7 +81,7 @@ class _WriteExampleState extends State<WriteExample> {
                         ),
                       );
                     } catch (e) {
-                      throw (e.toString());
+                      debugPrint(e.toString());
                     }
                   },
                   child: const Text('Set Workout')),

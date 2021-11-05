@@ -8,12 +8,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Center(child: Text("HomePage")),
+        const Center(child: Text('HomePage')),
         TextButton(
             onPressed: () {
               FirebaseAuth.instance.signOut();
             },
-            child: const Text("Log Out"))
+            child: const Text('Log Out'))
       ],
     );
   }

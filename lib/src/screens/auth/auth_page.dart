@@ -113,7 +113,7 @@ void _showErrorDialog(BuildContext context, String title, Exception e) {
           child: ListBody(
             children: <Widget>[
               Text(
-                '${(e as dynamic).message}',
+                e as String,
                 style: const TextStyle(fontSize: 18),
               ),
             ],

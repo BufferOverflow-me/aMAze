@@ -32,7 +32,7 @@ class Auth extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("aMAze"),
+        title: Text(MyTheme.appName),
       ),
       body: ListView(
         children: [
