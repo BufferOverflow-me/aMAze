@@ -55,7 +55,18 @@ class _WriteExampleState extends State<WriteExample> {
               ElevatedButton(
                   onPressed: () async {
                     try {
-                      await workout.child('Workouts').child('Cardio').set({});
+                      await workout
+                          .child('Workouts')
+                          .push()
+                          .child('Cardio')
+                          .set({
+                        'Name': 'Cardio',
+                        'Description': 'Cardio Workout',
+                        'Duration': '30',
+                        'Distance': '10',
+                        'Calories': '200',
+                        'Date': '2020-01-01'
+                      });
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: const Text('Set Workout'),

@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ReadExample extends StatefulWidget {
   const ReadExample({Key? key}) : super(key: key);
@@ -19,22 +21,36 @@ class _WriteExampleState extends State<ReadExample> {
   @override
   void initState() {
     super.initState();
-    _activateListener();
+    // _activateListener();
+    _performSingleFetch();
   }
 
-  _activateListener() {
-    _streamSubscription = database
+  void _performSingleFetch() {
+    database
         .child(FirebaseAuth.instance.currentUser!.uid)
-        .onValue
-        .listen((event) {
-      final data = Map<String, dynamic>.from(event.snapshot.value);
-
+        .get()
+        .then((snapshot) {
+      final data = Map<String, dynamic>.from(snapshot.value);
       setState(() {
-        displayText = data['Name'];
-        imageUrl = data['PhotoUrl'];
+        displayText = data['Name'] as String;
+        imageUrl = data['PhotoUrl'] as String;
       });
     });
   }
+
+  // _activateListener() {
+  //   _streamSubscription = database
+  //       .child(FirebaseAuth.instance.currentUser!.uid)
+  //       .onValue
+  //       .listen((event) {
+  //     final data = Map<String, dynamic>.from(event.snapshot.value);
+
+  //     setState(() {
+  //       displayText = data['Name'];
+  //       imageUrl = data['PhotoUrl'];
+  //     });
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -42,27 +58,68 @@ class _WriteExampleState extends State<ReadExample> {
       appBar: AppBar(
         title: const Text('Read Example'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage(imageUrl),
-              radius: 100,
+      // body: StreamBuilder(
+      //   stream: database
+      //       .child(FirebaseAuth.instance.currentUser!.uid)
+      //       .child('Workouts')
+      //       .orderByKey()
+      //       .onValue,
+      //   builder: (_, snapshot) {
+      //     final tileList = <ListTile>[];
+      //     if (snapshot.hasData) {
+      //       final myWorkouts = Map<String, dynamic>.from(
+      //           (snapshot.data! as Event).snapshot.value);
+      //       myWorkouts.forEach((key, value) {
+      //         final nextWorkout = Map<String, dynamic>.from(value)['Cardio'];
+      //         final workoutTile = ListTile(
+      //           leading: const FaIcon(FontAwesomeIcons.dumbbell),
+      //           title: Text(nextWorkout['Name']),
+      //           subtitle: Text(nextWorkout['Description']),
+      //         );
+      //         tileList.add(workoutTile);
+      //       });
+      //       return ListView.builder(
+      //         itemCount: tileList.length,
+      //         itemBuilder: (_, i) {
+      //           return tileList[i];
+      //         },
+      //       );
+      //     }
+      //     return const Center(child: CircularProgressIndicator());
+      //   },
+      // ),
+      body: FirebaseAnimatedList(
+        query: database
+            .child(FirebaseAuth.instance.currentUser!.uid)
+            .child('Workouts'),
+        itemBuilder: (context, snapshot, animation, index) {
+          final myWorkout = Map<String, dynamic>.from(snapshot.value);
+          final nextWorkout = Map<String, dynamic>.from(myWorkout)['Cardio'];
+          return SlideTransition(
+            position: Tween<Offset>(
+              begin: const Offset(1, 0),
+              end: const Offset(0, 0),
+            ).animate(
+              CurvedAnimation(
+                  parent: animation,
+                  curve: Curves.bounceOut,
+                  reverseCurve: Curves.bounceIn),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(displayText.toString()),
+            child: ListTile(
+              leading: const FaIcon(FontAwesomeIcons.weight),
+              title: Text(nextWorkout['Name']),
+              subtitle: Text(nextWorkout['Description']),
             ),
-          ],
-        ),
+            // child: Text(myWorkout.toString()),
+          );
+        },
       ),
     );
   }
 
   @override
   void dispose() {
-    _streamSubscription.cancel();
+    // _streamSubscription.cancel();
     super.dispose();
   }
 }
