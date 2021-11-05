@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
@@ -17,7 +15,7 @@ class _WriteExampleState extends State<ReadExample> {
   final database = FirebaseDatabase.instance.reference();
   String displayText = 'Name';
   String imageUrl = 'https://picsum.photos/200';
-  late StreamSubscription _streamSubscription;
+  // late StreamSubscription _streamSubscription;
   @override
   void initState() {
     super.initState();

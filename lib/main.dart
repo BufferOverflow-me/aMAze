@@ -4,6 +4,7 @@ import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/settings/settings_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   // ensure that widgets are being initialized.
@@ -28,7 +29,10 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(MyApp(
-    settingsController: settingsController,
+  runApp(MultiProvider(
+    providers: [],
+    child: MyApp(
+      settingsController: settingsController,
+    ),
   ));
 }
