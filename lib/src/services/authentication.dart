@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 enum ApplicationLoginState {
   loggedOut,
   loggedIn,
   emailAddress,
-  phone,
   register,
   password
 }
@@ -68,14 +68,30 @@ class ApplicationStateNotifier extends ChangeNotifier {
     String email,
     String displayName,
     String password,
-    PhoneAuthCredential phoneCredential,
     void Function(FirebaseAuthException e) errorCallback,
   ) async {
     try {
       var credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
       await credential.user!.updateDisplayName(displayName);
-      await credential.user!.updatePhoneNumber(phoneCredential);
+    } on FirebaseAuthException catch (e) {
+      errorCallback(e);
+    }
+  }
+
+  void signInWithGoogle(
+    void Function(FirebaseAuthException e) errorCallback,
+  ) async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAuthentication? googleSignInAuthentication =
+          await googleUser?.authentication;
+
+      var credential = GoogleAuthProvider.credential(
+        accessToken: googleSignInAuthentication?.accessToken,
+        idToken: googleSignInAuthentication?.idToken,
+      );
+      await FirebaseAuth.instance.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       errorCallback(e);
     }

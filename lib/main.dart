@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/src/app.dart';
+import 'package:fitness_app/src/services/authentication.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/settings/settings_service.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,10 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
   runApp(MultiProvider(
-    providers: [],
+    providers: [
+      ChangeNotifierProvider<ApplicationStateNotifier>(
+          create: (_) => ApplicationStateNotifier()),
+    ],
     child: MyApp(
       settingsController: settingsController,
     ),
