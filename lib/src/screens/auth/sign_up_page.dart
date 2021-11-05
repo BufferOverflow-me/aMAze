@@ -1,9 +1,10 @@
 import 'package:fitness_app/src/screens/auth/login_page.dart';
 import 'package:fitness_app/src/screens/auth/widgets/auth_buttons.dart';
-import 'package:fitness_app/src/screens/homepage.dart';
 import 'package:fitness_app/src/services/flutterfire.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../app.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);

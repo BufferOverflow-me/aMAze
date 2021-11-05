@@ -1,10 +1,11 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:fitness_app/src/screens/auth/widgets/auth_buttons.dart';
-import 'package:fitness_app/src/screens/homepage.dart';
 import 'package:fitness_app/src/services/flutterfire.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../app.dart';
 
 class LoginInPage extends StatefulWidget {
   const LoginInPage({Key? key}) : super(key: key);
