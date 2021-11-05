@@ -23,6 +23,7 @@ dependencies:
   font_awesome_flutter: ^9.2.0
   email_validator: ^2.0.1
   firebase_database: ^8.0.1
+  provider: ^6.0.1
 
 dev_dependencies:
   flutter_test:
