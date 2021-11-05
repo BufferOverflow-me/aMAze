@@ -1,4 +1,3 @@
-import 'package:fitness_app/src/screens/homepage.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/widgets/theme.dart';
 import 'package:flutter/material.dart';
@@ -20,5 +19,21 @@ class MyApp extends StatelessWidget {
             home: const HomePage(),
           );
         });
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("aMAze"),
+      ),
+      body: ListView(
+        children: [],
+      ),
+    );
   }
 }
