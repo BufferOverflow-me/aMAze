@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
             onPressed: () {
               FirebaseAuth.instance.signOut();
             },
-            child: Text("Log Out"))
+            child: const Text("Log Out"))
       ],
     );
   }
