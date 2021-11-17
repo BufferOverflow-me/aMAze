@@ -76,6 +76,7 @@ class ApplicationStateNotifier extends ChangeNotifier {
       await credential.user!.updateDisplayName(displayName);
     } on FirebaseAuthException catch (e) {
       errorCallback(e);
+      debugPrint(e.message);
     }
   }
 

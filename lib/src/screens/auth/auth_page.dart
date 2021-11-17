@@ -49,7 +49,7 @@ class Authentication extends StatelessWidget {
                   startLoginFlow();
                 },
                 child: const Text(
-                  'RSVP',
+                  'Login',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -112,7 +112,7 @@ void _showErrorDialog(BuildContext context, String title, Exception e) {
           child: ListBody(
             children: <Widget>[
               Text(
-                e as String,
+                e.toString(),
                 style: const TextStyle(fontSize: 18),
               ),
             ],
