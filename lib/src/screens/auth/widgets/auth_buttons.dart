@@ -6,10 +6,10 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Text(
           heading,
-          style: const TextStyle(fontSize: 24),
+          style: Theme.of(context).textTheme.headline3,
         ),
       );
 }
@@ -22,7 +22,7 @@ class Paragraph extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         child: Text(
           content,
-          style: const TextStyle(fontSize: 18),
+          style: Theme.of(context).textTheme.bodyText2,
         ),
       );
 }
@@ -41,7 +41,7 @@ class IconAndDetail extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               detail,
-              style: const TextStyle(fontSize: 18),
+              style: Theme.of(context).textTheme.bodyText2,
             )
           ],
         ),

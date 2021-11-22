@@ -124,6 +124,7 @@ class AmazeIntroductionPage extends StatelessWidget {
           ),
           onSkip: () {
             // Route this to login page.
+            startLoginFlow();
           },
           onDone: () {
             // Route this to login page.

@@ -70,13 +70,13 @@ class MyTheme {
       subtitle1: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: fontSizes[4],
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w500,
         ),
       ),
       subtitle2: GoogleFonts.lato(
         textStyle: TextStyle(
           fontSize: fontSizes[5],
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w400,
         ),
       ),
       bodyText1: GoogleFonts.lato(
