@@ -44,21 +44,6 @@ class Authentication extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (loginState) {
       case ApplicationLoginState.loggedOut:
-        // return Row(
-        //   children: [
-        //     Padding(
-        //       padding: const EdgeInsets.only(left: 24, bottom: 8),
-        //       child: StyledButton(
-        //         onPressed: () {
-        //           startLoginFlow();
-        //         },
-        //         child: const Text(
-        //           'Login',
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // );
         return AmazeIntroductionPage(
           startLoginFlow: startLoginFlow,
         );
