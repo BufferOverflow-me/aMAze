@@ -1,4 +1,5 @@
 import 'package:fitness_app/src/screens/homepage.dart';
+import 'package:fitness_app/src/screens/introduction/onboard.dart';
 import 'package:fitness_app/src/services/authentication.dart';
 import 'package:flutter/material.dart';
 import 'forms/email_form.dart';
@@ -43,20 +44,23 @@ class Authentication extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (loginState) {
       case ApplicationLoginState.loggedOut:
-        return Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 24, bottom: 8),
-              child: StyledButton(
-                onPressed: () {
-                  startLoginFlow();
-                },
-                child: const Text(
-                  'Login',
-                ),
-              ),
-            ),
-          ],
+        // return Row(
+        //   children: [
+        //     Padding(
+        //       padding: const EdgeInsets.only(left: 24, bottom: 8),
+        //       child: StyledButton(
+        //         onPressed: () {
+        //           startLoginFlow();
+        //         },
+        //         child: const Text(
+        //           'Login',
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // );
+        return AmazeIntroductionPage(
+          startLoginFlow: startLoginFlow,
         );
       case ApplicationLoginState.emailAddress:
         return EmailForm(
@@ -135,7 +139,3 @@ void _showErrorDialog(BuildContext context, String title, Exception e) {
     },
   );
 }
-
-
-
-

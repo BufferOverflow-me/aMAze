@@ -1,5 +1,5 @@
 import 'package:fitness_app/src/screens/auth/auth_page.dart';
-import 'package:fitness_app/src/screens/homepage.dart';
+import 'package:fitness_app/src/screens/introduction/onboard.dart';
 import 'package:fitness_app/src/services/authentication.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/settings/settings_view.dart';
@@ -28,9 +28,8 @@ class MyApp extends StatelessWidget {
                   switch (routeSettings.name) {
                     case SettingsView.routeName:
                       return SettingsView(controller: settingsController);
-                    // case SampleItemDetailsView.routeName:
-                    //   return const SampleItemDetailsView();
-                    // case SampleItemListView.routeName:
+                    case Auth.routeName:
+                      return const Auth();
                     default:
                       return const Auth();
                   }
@@ -45,40 +44,25 @@ class MyApp extends StatelessWidget {
 
 class Auth extends StatelessWidget {
   const Auth({Key? key}) : super(key: key);
+  static const routeName = '/Auth';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(MyTheme.appName),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              // Navigate to the settings page. If the user leaves and returns
-              // to the app after it has been killed while running in the
-              // background, the navigation stack is restored.
-              Navigator.restorablePushNamed(context, SettingsView.routeName);
-            },
-          ),
-        ],
-      ),
-      body: ListView(
-        children: [
-          Consumer<ApplicationStateNotifier>(
-              builder: (context, appState, child) => Authentication(
-                    email: appState.email,
-                    loginState: appState.loginState,
-                    startLoginFlow: appState.startLoginFlow,
-                    verifyEmail: appState.verifyEmail,
-                    signInWithEmailAndPassword:
-                        appState.signInWithEmailAndPassword,
-                    cancelRegistration: appState.cancelRegistration,
-                    registerAccount: appState.registerAccount,
-                    signOut: appState.signOut,
-                  )),
-        ],
-      ),
-    );
+    return Consumer<ApplicationStateNotifier>(
+        builder: (context, appState, child) => Scaffold(
+              body: SafeArea(
+                child: Authentication(
+                  email: appState.email,
+                  loginState: appState.loginState,
+                  startLoginFlow: appState.startLoginFlow,
+                  verifyEmail: appState.verifyEmail,
+                  signInWithEmailAndPassword:
+                      appState.signInWithEmailAndPassword,
+                  cancelRegistration: appState.cancelRegistration,
+                  registerAccount: appState.registerAccount,
+                  signOut: appState.signOut,
+                ),
+              ),
+            ));
   }
 }

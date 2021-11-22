@@ -4,8 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class AmazeIntroductionPage extends StatelessWidget {
-  const AmazeIntroductionPage({Key? key}) : super(key: key);
-
+  const AmazeIntroductionPage({
+    Key? key,
+    required this.startLoginFlow,
+  }) : super(key: key);
+  final VoidCallback startLoginFlow;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,6 +127,7 @@ class AmazeIntroductionPage extends StatelessWidget {
           },
           onDone: () {
             // Route this to login page.
+            startLoginFlow();
           },
           showDoneButton: true,
           showSkipButton: true,
