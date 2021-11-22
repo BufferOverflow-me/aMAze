@@ -3,7 +3,7 @@ import 'package:fitness_app/src/screens/homepage.dart';
 import 'package:fitness_app/src/services/authentication.dart';
 import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/settings/settings_view.dart';
-import 'package:fitness_app/src/widgets/theme.dart';
+import 'package:fitness_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
