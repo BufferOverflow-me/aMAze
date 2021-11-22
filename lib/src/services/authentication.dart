@@ -8,6 +8,7 @@ enum ApplicationLoginState {
   loggedIn,
   emailAddress,
   register,
+  forgetPassword,
   password
 }
 
@@ -36,6 +37,11 @@ class ApplicationStateNotifier extends ChangeNotifier {
 
   void startLoginFlow() {
     _loginState = ApplicationLoginState.emailAddress;
+    notifyListeners();
+  }
+
+  void forgetPassword() {
+    _loginState = ApplicationLoginState.forgetPassword;
     notifyListeners();
   }
 

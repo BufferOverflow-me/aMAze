@@ -80,6 +80,10 @@ class Authentication extends StatelessWidget {
         );
       case ApplicationLoginState.loggedIn:
         return const HomePage();
+      case ApplicationLoginState.forgetPassword:
+        return const Center(
+          child: Text('Forget Password'),
+        );
       default:
         return Row(
           children: const [
