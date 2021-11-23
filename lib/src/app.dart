@@ -4,6 +4,7 @@ import 'package:fitness_app/src/settings/setting_controller.dart';
 import 'package:fitness_app/src/settings/settings_view.dart';
 import 'package:fitness_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -49,17 +50,22 @@ class Auth extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ApplicationStateNotifier>(
         builder: (context, appState, child) => Scaffold(
-              body: SafeArea(
-                child: Authentication(
-                  email: appState.email,
-                  loginState: appState.loginState,
-                  startLoginFlow: appState.startLoginFlow,
-                  verifyEmail: appState.verifyEmail,
-                  signInWithEmailAndPassword:
-                      appState.signInWithEmailAndPassword,
-                  cancelRegistration: appState.cancelRegistration,
-                  registerAccount: appState.registerAccount,
-                  signOut: appState.signOut,
+              body: AnnotatedRegion<SystemUiOverlayStyle>(
+                value: SystemUiOverlayStyle.light.copyWith(
+                  statusBarColor: Theme.of(context).primaryColor,
+                ),
+                child: SafeArea(
+                  child: Authentication(
+                    email: appState.email,
+                    loginState: appState.loginState,
+                    startLoginFlow: appState.startLoginFlow,
+                    verifyEmail: appState.verifyEmail,
+                    signInWithEmailAndPassword:
+                        appState.signInWithEmailAndPassword,
+                    cancelRegistration: appState.cancelRegistration,
+                    registerAccount: appState.registerAccount,
+                    signOut: appState.signOut,
+                  ),
                 ),
               ),
             ));

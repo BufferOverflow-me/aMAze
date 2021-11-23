@@ -12,128 +12,126 @@ class AmazeIntroductionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: IntroductionScreen(
-          pages: [
-            PageViewModel(
-              image: buildImage('assets/svg/pushup_guy.svg', context),
-              titleWidget: Align(
-                alignment: Alignment.bottomLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'aMAze',
-                      style: Theme.of(context).textTheme.headline2,
+      body: IntroductionScreen(
+        pages: [
+          PageViewModel(
+            image: buildImage('assets/svg/pushup_guy.svg', context),
+            titleWidget: Align(
+              alignment: Alignment.bottomLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'aMAze',
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Text(
+                      'Your Fitness Coach',
+                      style: Theme.of(context).textTheme.headline4,
+                      maxLines: 1,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Text(
-                        'Your Fitness Coach',
-                        style: Theme.of(context).textTheme.headline4,
-                        maxLines: 1,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              bodyWidget: Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Get a personalised workout plan based on your goals and preferences.',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              ),
-              decoration: getPageDecoration(),
             ),
-            PageViewModel(
-              image: buildImage('assets/svg/yoga_lady.svg', context),
-              titleWidget: Align(
-                alignment: Alignment.bottomLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'aMAze',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Text(
-                        'Your Yoga Expert',
-                        style: Theme.of(context).textTheme.headline4,
-                        maxLines: 1,
-                      ),
-                    ),
-                  ],
-                ),
+            bodyWidget: Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'Get a personalised workout plan based on your goals and preferences.',
+                style: Theme.of(context).textTheme.headline5,
               ),
-              bodyWidget: Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Attain control over your breath and help relax both your body and mind.',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              ),
-              decoration: getPageDecoration(),
             ),
-            PageViewModel(
-              image: buildImage('assets/svg/meditating_lady.svg', context),
-              titleWidget: Align(
-                alignment: Alignment.bottomLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'aMAze',
-                      style: Theme.of(context).textTheme.headline2,
+            decoration: getPageDecoration(),
+          ),
+          PageViewModel(
+            image: buildImage('assets/svg/yoga_lady.svg', context),
+            titleWidget: Align(
+              alignment: Alignment.bottomLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'aMAze',
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Text(
+                      'Your Yoga Expert',
+                      style: Theme.of(context).textTheme.headline4,
+                      maxLines: 1,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Text(
-                        'Your Meditation Guru',
-                        style: Theme.of(context).textTheme.headline4,
-                        maxLines: 1,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              bodyWidget: Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Attain peace of mind and find the person inside you, by meditating daily!',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              ),
-              decoration: getPageDecoration(),
             ),
-          ],
-          dotsDecorator: getDotDecorator(context),
-          done: CustomText(
-            title: 'Get Started',
-            color: Theme.of(context).primaryColor,
+            bodyWidget: Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'Attain control over your breath and help relax both your body and mind.',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+            ),
+            decoration: getPageDecoration(),
           ),
-          skip: CustomText(
-            title: 'Skip',
-            color: Theme.of(context).primaryColor,
+          PageViewModel(
+            image: buildImage('assets/svg/meditating_lady.svg', context),
+            titleWidget: Align(
+              alignment: Alignment.bottomLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'aMAze',
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Text(
+                      'Your Meditation Guru',
+                      style: Theme.of(context).textTheme.headline4,
+                      maxLines: 1,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            bodyWidget: Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'Attain peace of mind and find the person inside you, by meditating daily!',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+            ),
+            decoration: getPageDecoration(),
           ),
-          next: Icon(
-            Icons.arrow_forward,
-            color: Theme.of(context).primaryColor,
-          ),
-          onSkip: () {
-            // Route this to login page.
-            startLoginFlow();
-          },
-          onDone: () {
-            // Route this to login page.
-            startLoginFlow();
-          },
-          showDoneButton: true,
-          showSkipButton: true,
-          showNextButton: true,
+        ],
+        dotsDecorator: getDotDecorator(context),
+        done: CustomText(
+          title: 'Get Started',
+          color: Theme.of(context).primaryColor,
         ),
+        skip: CustomText(
+          title: 'Skip',
+          color: Theme.of(context).primaryColor,
+        ),
+        next: Icon(
+          Icons.arrow_forward,
+          color: Theme.of(context).primaryColor,
+        ),
+        onSkip: () {
+          // Route this to login page.
+          startLoginFlow();
+        },
+        onDone: () {
+          // Route this to login page.
+          startLoginFlow();
+        },
+        showDoneButton: true,
+        showSkipButton: true,
+        showNextButton: true,
       ),
     );
   }
