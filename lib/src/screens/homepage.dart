@@ -27,7 +27,13 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const Center(child: Text('HomePage')),
+          Center(
+              child:
+                  Text(FirebaseAuth.instance.currentUser?.displayName ?? '')),
+          Center(
+              child: Text(
+                  FirebaseAuth.instance.currentUser?.emailVerified.toString() ??
+                      '')),
           TextButton(
               onPressed: () {
                 FirebaseAuth.instance.signOut();

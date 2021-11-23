@@ -1,7 +1,6 @@
+import 'package:fitness_app/src/screens/auth/widgets/social_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../widgets/auth_buttons.dart';
+import 'package:fitness_app/src/screens/auth/widgets/auth_buttons.dart';
 
 class EmailForm extends StatefulWidget {
   const EmailForm({required this.callback, Key? key}) : super(key: key);
@@ -68,33 +67,8 @@ class _EmailFormState extends State<EmailForm> {
             ),
           ),
 
-          // Social but
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // TODO: Write code for these buttons
-                IconButton(
-                  onPressed: () {},
-                  icon: const FaIcon(FontAwesomeIcons.google),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const FaIcon(FontAwesomeIcons.facebook),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const FaIcon(FontAwesomeIcons.twitter),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const FaIcon(FontAwesomeIcons.github),
-                ),
-              ],
-            ),
-          )
+          // Social buttons
+          const SocialButtons()
         ],
       ),
     );

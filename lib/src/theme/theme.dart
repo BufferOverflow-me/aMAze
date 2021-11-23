@@ -30,6 +30,7 @@ class MyTheme {
         primarySwatch: darkSwatch,
         textTheme: myTextTheme(),
         primaryTextTheme: myTextTheme(),
+        // scaffoldBackgroundColor: const Color(0xFF212121),
       );
   static const MaterialColor darkSwatch =
       MaterialColor(0xFF212121, <int, Color>{
