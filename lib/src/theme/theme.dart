@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
   static String appName = 'aMAze';
-  static ThemeData darkTheme() => ThemeData();
   static ThemeData lightTheme() => ThemeData(
         primarySwatch: primarySwatch,
         textTheme: myTextTheme(),
@@ -22,10 +21,30 @@ class MyTheme {
       600: Color(0xFF5E35B1),
       700: Color(0xFF512DA8),
       800: Color(0xFF4527A0),
-      900: Color(0xFF311B92),
+      900: Color(0xFF311B92), // Primary Color
       1000: Color(0xFFB388FF),
     },
   );
+
+  static ThemeData darkTheme() => ThemeData(
+        primarySwatch: darkSwatch,
+        textTheme: myTextTheme(),
+        primaryTextTheme: myTextTheme(),
+      );
+  static const MaterialColor darkSwatch =
+      MaterialColor(0xFF9B9B9B, <int, Color>{
+    50: Color(0xFF212121),
+    100: Color(0xFF111111),
+    200: Color(0xFF222222),
+    300: Color(0xFF343434),
+    400: Color(0xFF454545),
+    500: Color(0xFF565656),
+    600: Color(0xFF676767),
+    700: Color(0xFF787878),
+    800: Color(0xFF898989),
+    900: Color(0xFF9B9B9B), // Primary Color
+    1000: Color(0xFFACACAC),
+  });
 
   // A function for textTheme
   static TextTheme myTextTheme() {
