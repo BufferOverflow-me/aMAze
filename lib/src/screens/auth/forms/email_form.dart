@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../widgets/auth_buttons.dart';
 
@@ -25,7 +26,8 @@ class _EmailFormState extends State<EmailForm> {
             height: 400,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
             child: Form(
               key: _formKey,
               child: Column(
@@ -46,27 +48,53 @@ class _EmailFormState extends State<EmailForm> {
                       },
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 16.0, horizontal: 30),
-                        child: StyledButton(
-                          onPressed: () async {
-                            if (_formKey.currentState!.validate()) {
-                              widget.callback(_controller.text);
-                            }
-                          },
-                          child: const Text('NEXT'),
-                        ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16.0, horizontal: 30),
+                      child: StyledButton(
+                        onPressed: () async {
+                          if (_formKey.currentState!.validate()) {
+                            widget.callback(_controller.text);
+                          }
+                        },
+                        child: const Text('NEXT'),
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
             ),
           ),
+
+          // Social but
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // TODO: Write code for these buttons
+                IconButton(
+                  onPressed: () {},
+                  icon: const FaIcon(FontAwesomeIcons.google),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const FaIcon(FontAwesomeIcons.facebook),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const FaIcon(FontAwesomeIcons.twitter),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const FaIcon(FontAwesomeIcons.github),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
