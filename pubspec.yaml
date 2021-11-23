@@ -42,8 +42,8 @@ flutter:
     - assets/svg/
 
 flutter_native_splash:
-  image: "assets/path854.png"
-  image_dark: "assets/path855.png"
+  image: "assets/lightmodelogo.png"
+  image_dark: "assets/darkmodelogo.png"
   color: "#EDE7F6"
   color_dark: "#000000"
   android: true

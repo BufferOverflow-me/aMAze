@@ -32,17 +32,17 @@ class MyTheme {
         primaryTextTheme: myTextTheme(),
       );
   static const MaterialColor darkSwatch =
-      MaterialColor(0xFF9B9B9B, <int, Color>{
-    50: Color(0xFF212121),
-    100: Color(0xFF111111),
-    200: Color(0xFF222222),
-    300: Color(0xFF343434),
-    400: Color(0xFF454545),
-    500: Color(0xFF565656),
-    600: Color(0xFF676767),
-    700: Color(0xFF787878),
-    800: Color(0xFF898989),
-    900: Color(0xFF9B9B9B), // Primary Color
+      MaterialColor(0xFF212121, <int, Color>{
+    50: Color(0xFFFAFAFA),
+    100: Color(0xFFF5F5F5),
+    200: Color(0xFFEEEEEE),
+    300: Color(0xFFE0E0E0),
+    400: Color(0xFFBDBDBD),
+    500: Color(0xFF9E9E9E),
+    600: Color(0xFF757575),
+    700: Color(0xFF616161),
+    800: Color(0xFF424242),
+    900: Color(0xFF212121), // Primary Color
     1000: Color(0xFFACACAC),
   });
 
