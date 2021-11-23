@@ -26,32 +26,28 @@ class _EmailFormState extends State<EmailForm> {
           ),
           Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
             child: Form(
               key: _formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: TextFormField(
-                      controller: _controller,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter your email',
-                      ),
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Enter your email address to continue';
-                        }
-                        return null;
-                      },
+                  TextFormField(
+                    controller: _controller,
+                    decoration: const InputDecoration(
+                      hintText: 'Enter your email',
                     ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter your email address to continue';
+                      }
+                      return null;
+                    },
                   ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 16.0, horizontal: 30),
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: StyledButton(
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
@@ -68,7 +64,10 @@ class _EmailFormState extends State<EmailForm> {
           ),
 
           // Social buttons
-          const SocialButtons()
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 32.0),
+            child: SocialButtons(),
+          )
         ],
       ),
     );
