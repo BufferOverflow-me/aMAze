@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 enum ApplicationLoginState {
@@ -114,6 +115,23 @@ class ApplicationStateNotifier extends ChangeNotifier {
         idToken: googleSignInAuthentication?.idToken,
       );
       await FirebaseAuth.instance.signInWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      errorCallback(e);
+    }
+  }
+
+  void signInWithFacebook(
+    void Function(FirebaseAuthException e) errorCallback,
+  ) async {
+    try {
+      final LoginResult result = await FacebookAuth.instance.login();
+      if (result.status == LoginStatus.success) {
+        // Create a credential from the access token
+        final OAuthCredential credential =
+            FacebookAuthProvider.credential(result.accessToken!.token);
+        // Once signed in, return the UserCredential
+        await FirebaseAuth.instance.signInWithCredential(credential);
+      }
     } on FirebaseAuthException catch (e) {
       errorCallback(e);
     }

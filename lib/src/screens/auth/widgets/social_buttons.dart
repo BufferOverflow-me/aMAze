@@ -30,7 +30,21 @@ class SocialButtons extends StatelessWidget {
             icon: const FaIcon(FontAwesomeIcons.google),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              ApplicationStateNotifier().signInWithFacebook((e) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(e.toString()),
+                  duration: const Duration(minutes: 2),
+                  action: SnackBarAction(
+                    label: 'OK',
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                    },
+                  ),
+                ));
+                log(e.toString());
+              });
+            },
             icon: const FaIcon(FontAwesomeIcons.facebook),
           ),
           IconButton(
