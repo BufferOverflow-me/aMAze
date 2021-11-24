@@ -1,3 +1,5 @@
+import 'dart:developer';
+import 'package:fitness_app/src/services/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -16,7 +18,12 @@ class SocialButtons extends StatelessWidget {
         children: [
           // TODO: Write code for these buttons
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              ApplicationStateNotifier().signInWithGoogle((e) {
+                log(e.toString());
+                // ShowErrorDialog(title: 'Something went Wrong', e: e);
+              });
+            },
             icon: const FaIcon(FontAwesomeIcons.google),
           ),
           IconButton(
