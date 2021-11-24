@@ -20,6 +20,9 @@ class SocialButtons extends StatelessWidget {
           IconButton(
             onPressed: () {
               ApplicationStateNotifier().signInWithGoogle((e) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(e.toString()),
+                ));
                 log(e.toString());
                 // ShowErrorDialog(title: 'Something went Wrong', e: e);
               });
