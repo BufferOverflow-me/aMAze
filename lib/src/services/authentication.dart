@@ -157,9 +157,9 @@ class ApplicationStateNotifier extends ChangeNotifier {
   }
 
   void signOut() async {
-    FirebaseAuth.instance.signOut();
     try {
       GoogleSignIn().signOut();
+      FirebaseAuth.instance.signOut();
     } catch (e) {
       log(e.toString());
     }
