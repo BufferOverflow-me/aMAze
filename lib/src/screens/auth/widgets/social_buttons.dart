@@ -16,7 +16,6 @@ class SocialButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // TODO: Write code for these buttons
           IconButton(
             onPressed: () {
               ApplicationStateNotifier().signInWithGoogle((e) {
@@ -34,7 +33,7 @@ class SocialButtons extends StatelessWidget {
               ApplicationStateNotifier().signInWithFacebook((e) {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(e.toString()),
-                  duration: const Duration(minutes: 2),
+                  // duration: const Duration(minutes: 2),
                   action: SnackBarAction(
                     label: 'OK',
                     onPressed: () {
@@ -48,13 +47,7 @@ class SocialButtons extends StatelessWidget {
             icon: const FaIcon(FontAwesomeIcons.facebook),
           ),
           IconButton(
-            onPressed: () {},
-            icon: const FaIcon(FontAwesomeIcons.twitter),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const FaIcon(FontAwesomeIcons.github),
-          ),
+              onPressed: () {}, icon: const FaIcon(FontAwesomeIcons.phone)),
         ],
       ),
     );

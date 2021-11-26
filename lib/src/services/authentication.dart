@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,23 @@ enum ApplicationLoginState {
   password
 }
 
+/*
+ * ┌─────────────────────────────────────────────────────────────────────────────┐
+ * │                                                                             │
+ * │                                                                             │
+ * │  AUTHENTICATION :                                                            │
+ * │                                                                             │
+ * │  EMAIL                                                                      │
+ * │                                                                             │
+ * │  GOOGLE                                                                     │
+ * │                                                                             │
+ * │  FACEBOOK                                                                   │
+ * │                                                                             │
+ * │  PHONE                                                                      │
+ * │                                                                             │
+ * │                                                                             │
+ * └─────────────────────────────────────────────────────────────────────────────┘
+ */
 class ApplicationStateNotifier extends ChangeNotifier {
   ApplicationStateNotifier() {
     init();
@@ -137,7 +156,12 @@ class ApplicationStateNotifier extends ChangeNotifier {
     }
   }
 
-  void signOut() {
+  void signOut() async {
     FirebaseAuth.instance.signOut();
+    try {
+      GoogleSignIn().signOut();
+    } catch (e) {
+      log(e.toString());
+    }
   }
 }
