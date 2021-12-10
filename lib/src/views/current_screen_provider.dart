@@ -1,4 +1,3 @@
-import 'package:fitness_app/src/services/authentication.dart';
 import 'package:flutter/cupertino.dart';
 
 enum ApplicationScreenState {
@@ -13,7 +12,7 @@ class CurrentScreenProvider extends ChangeNotifier {
   CurrentScreenProvider() {
     init();
   }
-  init() {
+  void init() {
     // Initialize the firestore database and all the stuff required.
   }
   ApplicationScreenState _screenState = ApplicationScreenState.home;
