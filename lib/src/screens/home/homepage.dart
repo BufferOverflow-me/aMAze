@@ -1,8 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import 'line_chart.dart';
-import 'user_appbar.dart';
+import 'components/line_chart.dart';
+import 'components/user_appbar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
