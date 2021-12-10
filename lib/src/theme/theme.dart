@@ -27,12 +27,9 @@ class MyTheme {
   );
 
   static ThemeData darkTheme() => ThemeData(
-        primarySwatch: Colors.green,
-        textTheme: const TextTheme(
-          bodyText1: TextStyle(),
-          bodyText2: TextStyle(),
-        ).apply(
-          bodyColor: Colors.white,
+        primarySwatch: Colors.purple,
+        textTheme: myTextTheme().apply(
+          bodyColor: Colors.grey[200],
           displayColor: Colors.white,
         ),
         primaryTextTheme: myTextTheme(),

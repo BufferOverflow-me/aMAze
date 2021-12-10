@@ -6,8 +6,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'functions/greeting.dart';
 
 class UserAppBar extends StatelessWidget {
-  const UserAppBar({Key? key}) : super(key: key);
+  const UserAppBar({
+    Key? key,
+    required this.onPressed,
+  }) : super(key: key);
 
+  // On tap callback.
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -26,24 +31,27 @@ class UserAppBar extends StatelessWidget {
             ),
           ],
         ),
-        CachedNetworkImage(
-          imageUrl: FirebaseAuth.instance.currentUser?.photoURL ??
-              'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y',
-          imageBuilder: (context, imageProvider) => Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: imageProvider,
-                fit: BoxFit.cover,
+        InkWell(
+          onTap: onPressed,
+          child: CachedNetworkImage(
+            imageUrl: FirebaseAuth.instance.currentUser?.photoURL ??
+                'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y',
+            imageBuilder: (context, imageProvider) => Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
+            placeholder: (context, url) => const CircularProgressIndicator(),
+            errorWidget: (context, url, error) =>
+                const Center(child: FaIcon(FontAwesomeIcons.user)),
           ),
-          placeholder: (context, url) => const CircularProgressIndicator(),
-          errorWidget: (context, url, error) =>
-              const Center(child: FaIcon(FontAwesomeIcons.user)),
         ),
       ],
     );
