@@ -29,7 +29,7 @@ class MyTheme {
   static ThemeData darkTheme() => ThemeData(
         primarySwatch: Colors.purple,
         textTheme: myTextTheme().apply(
-          bodyColor: Colors.grey[200],
+          bodyColor: Colors.white,
           displayColor: Colors.white,
         ),
         primaryTextTheme: myTextTheme(),
