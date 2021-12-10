@@ -1,4 +1,4 @@
-import 'package:fitness_app/src/settings/setting_controller.dart';
+import 'package:fitness_app/src/screens/settings/setting_controller.dart';
 import 'package:flutter/material.dart';
 
 /// Displays the various settings that can be customized by the user.
