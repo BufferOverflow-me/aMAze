@@ -1,6 +1,8 @@
 import 'package:fitness_app/src/screens/home/homepage.dart';
 import 'package:fitness_app/src/screens/introduction/onboard.dart';
 import 'package:fitness_app/src/services/authentication.dart';
+import 'package:fitness_app/src/views/app_view.dart';
+import 'package:fitness_app/src/views/navig_view.dart';
 import 'package:flutter/material.dart';
 import 'forms/email_form.dart';
 import 'forms/password_form.dart';
@@ -79,7 +81,8 @@ class Authentication extends StatelessWidget {
           },
         );
       case ApplicationLoginState.loggedIn:
-        return const HomePage();
+        // return const HomePage();
+        return NavigView();
       case ApplicationLoginState.forgetPassword:
         return const Center(
           child: Text('Forget Password'),

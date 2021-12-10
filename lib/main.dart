@@ -3,6 +3,7 @@ import 'package:fitness_app/src/app.dart';
 import 'package:fitness_app/src/screens/settings/setting_controller.dart';
 import 'package:fitness_app/src/screens/settings/settings_service.dart';
 import 'package:fitness_app/src/services/authentication.dart';
+import 'package:fitness_app/src/views/current_screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -34,6 +35,8 @@ void main() async {
     providers: [
       ChangeNotifierProvider<ApplicationStateNotifier>(
           create: (_) => ApplicationStateNotifier()),
+      ChangeNotifierProvider<CurrentScreenProvider>(
+          create: (_) => CurrentScreenProvider()),
     ],
     child: MyApp(
       settingsController: settingsController,
