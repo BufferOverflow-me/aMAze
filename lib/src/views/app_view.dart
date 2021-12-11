@@ -18,8 +18,6 @@ class AppView extends StatelessWidget {
         return const Center(child: Text('hots'));
       case ApplicationScreenState.store:
         return const Center(child: Text('store'));
-      case ApplicationScreenState.settings:
-        return const Center(child: Text('settings'));
       default:
         return const HomePage();
     }

@@ -44,29 +44,18 @@ class CurrentScreenProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void settingsPage() {
-    _screenState = ApplicationScreenState.settings;
-    _currentIndex = 4;
-    notifyListeners();
-  }
-
   void setCurrentScreen(int index) {
     switch (index) {
       case 0:
-        homePage();
-        break;
+        return homePage();
       case 1:
-        statsPage();
-        break;
+        return statsPage();
       case 2:
-        hotsPage();
-        break;
+        return hotsPage();
       case 3:
-        storePage();
-        break;
-      case 4:
-        settingsPage();
-        break;
+        return storePage();
+      default:
+        return homePage();
     }
   }
 }

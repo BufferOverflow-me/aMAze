@@ -30,10 +30,6 @@ class NavigView extends StatelessWidget {
                   icon: FaIcon(FontAwesomeIcons.store),
                   label: 'Store',
                 ),
-                BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.cog),
-                  label: 'Settings',
-                ),
               ],
               currentIndex: screenState.currentIndex,
               onTap: screenState.setCurrentScreen,
