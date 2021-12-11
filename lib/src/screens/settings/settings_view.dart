@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_app/src/screens/settings/components/color_selector.dart';
 import 'package:fitness_app/src/screens/settings/setting_controller.dart';
 import 'package:fitness_app/src/services/user_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -25,35 +27,48 @@ class SettingsView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        // Glue the SettingsController to the theme selection DropdownButton.
-        //
-        // When a user selects a theme from the dropdown list, the
-        // SettingsController is updated, which rebuilds the MaterialApp.
-        // child: DropdownButton<ThemeMode>(
-        //   // Read the selected themeMode from the controller
-        //   value: controller.themeMode,
-        //   // Call the updateThemeMode method any time the user selects a theme.
-        //   onChanged: controller.updateThemeMode,
-        //   items: const [
-        //     DropdownMenuItem(
-        //       value: ThemeMode.system,
-        //       child: Text('System Theme'),
-        //     ),
-        //     DropdownMenuItem(
-        //       value: ThemeMode.light,
-        //       child: Text('Light Theme'),
-        //     ),
-        //     DropdownMenuItem(
-        //       value: ThemeMode.dark,
-        //       child: Text('Dark Theme'),
-        //     )
-        //   ],
-        // ),
-
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Consumer<UserProvider>(
-              builder: (context, value, child) => Text(value.userEmail),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Theme',
+                  style: Theme.of(context).textTheme.button,
+                ),
+                Row(
+                  children: [
+                    ColorSelector(
+                        color: Colors.white,
+                        onTap: () {
+                          controller.updateThemeMode(ThemeMode.light);
+                        }),
+                    ColorSelector(
+                        color: Colors.black,
+                        onTap: () {
+                          controller.updateThemeMode(ThemeMode.dark);
+                        }),
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Color Schema',
+                  style: Theme.of(context).textTheme.button,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ColorSelector(color: Colors.black, onTap: () {}),
+                    ColorSelector(color: Colors.white, onTap: () {}),
+                    ColorSelector(color: Colors.purple, onTap: () {}),
+                  ],
+                ),
+              ],
             )
           ],
         ),

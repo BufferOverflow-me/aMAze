@@ -10,23 +10,32 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            UserAppBar(
-              onPressed: () {
-                Navigator.restorablePushNamed(context, '/settings');
-              },
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 18.0),
-              child: MyLineChart(),
-            )
-          ],
+      body: Container(
+        height: size.height * 0.45,
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          borderRadius: const BorderRadius.only(
+            bottomRight: Radius.circular(250),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              UserAppBar(
+                onPressed: () {
+                  Navigator.restorablePushNamed(context, '/settings');
+                },
+              ),
+              const Padding(
+                padding: EdgeInsets.only(top: 18.0),
+                child: MyLineChart(),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -25,9 +25,18 @@ class UserAppBar extends StatelessWidget {
                 children: [
                   Text(
                     greeting(),
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline4
+                        ?.copyWith(color: Colors.white),
                   ),
-                  Text(user.userName)
+                  Text(
+                    user.userName,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(color: Colors.white),
+                  )
                 ],
               ),
               InkWell(
