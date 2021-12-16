@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/src/screens/settings/components/color_selector.dart';
+import 'package:fitness_app/src/screens/settings/components/options.dart';
 import 'package:fitness_app/src/screens/settings/setting_controller.dart';
 import 'package:fitness_app/src/services/user_provider.dart';
 import 'package:flutter/material.dart';
@@ -30,45 +31,26 @@ class SettingsView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            OptionWidget(
               children: [
-                Text(
-                  'Theme',
-                  style: Theme.of(context).textTheme.button,
+                ColorSelector(
+                  color: Colors.white,
+                  onTap: () => controller.updateThemeMode(ThemeMode.light),
                 ),
-                Row(
-                  children: [
-                    ColorSelector(
-                        color: Colors.white,
-                        onTap: () {
-                          controller.updateThemeMode(ThemeMode.light);
-                        }),
-                    ColorSelector(
-                        color: Colors.black,
-                        onTap: () {
-                          controller.updateThemeMode(ThemeMode.dark);
-                        }),
-                  ],
+                ColorSelector(
+                  color: Colors.black,
+                  onTap: () => controller.updateThemeMode(ThemeMode.dark),
                 ),
               ],
+              text: 'Theme',
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            OptionWidget(
               children: [
-                Text(
-                  'Color Schema',
-                  style: Theme.of(context).textTheme.button,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ColorSelector(color: Colors.black, onTap: () {}),
-                    ColorSelector(color: Colors.white, onTap: () {}),
-                    ColorSelector(color: Colors.purple, onTap: () {}),
-                  ],
-                ),
+                ColorSelector(color: Colors.black, onTap: () {}),
+                ColorSelector(color: Colors.white, onTap: () {}),
+                ColorSelector(color: Colors.purple, onTap: () {}),
               ],
+              text: 'Color Schema',
             )
           ],
         ),

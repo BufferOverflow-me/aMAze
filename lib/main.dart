@@ -4,6 +4,8 @@ import 'package:fitness_app/src/screens/settings/setting_controller.dart';
 import 'package:fitness_app/src/screens/settings/settings_service.dart';
 import 'package:fitness_app/src/services/authentication.dart';
 import 'package:fitness_app/src/services/user_provider.dart';
+import 'package:fitness_app/src/theme/colorService.dart';
+import 'package:fitness_app/src/theme/color_controller.dart';
 import 'package:fitness_app/src/views/current_screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,6 +22,10 @@ void main() async {
   // Load the user's preferred theme while the splash screen is displayed.
   // This prevents a sudden theme change when the app is first displayed.
   await settingsController.loadSettings();
+
+  // Load the colors
+  final userColor = ColorController(ColorService());
+  await userColor.loadColor();
 
   // Initialize firebase
   await Firebase.initializeApp();
@@ -39,6 +45,8 @@ void main() async {
       ChangeNotifierProvider<CurrentScreenProvider>(
           create: (_) => CurrentScreenProvider()),
       ChangeNotifierProvider<UserProvider>(create: (_) => UserProvider()),
+      ChangeNotifierProvider<ColorController>(
+          create: (_) => ColorController(ColorService())),
     ],
     child: MyApp(
       settingsController: settingsController,

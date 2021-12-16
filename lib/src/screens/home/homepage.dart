@@ -1,4 +1,6 @@
+import 'package:fitness_app/src/theme/color_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'components/line_chart.dart';
 import 'components/user_appbar.dart';
@@ -34,6 +36,11 @@ class HomePage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 18.0),
                 child: MyLineChart(),
               ),
+              Consumer<ColorController>(
+                builder: (context, userColor, child) {
+                  return Text(userColor.color.toString());
+                },
+              )
             ],
           ),
         ),
