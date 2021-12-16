@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 
 enum ApplicationScreenState {
   home,
-  stats,
   hots,
   store,
   settings,
@@ -26,21 +25,15 @@ class CurrentScreenProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void statsPage() {
-    _screenState = ApplicationScreenState.stats;
-    _currentIndex = 1;
-    notifyListeners();
-  }
-
   void hotsPage() {
     _screenState = ApplicationScreenState.hots;
-    _currentIndex = 2;
+    _currentIndex = 1;
     notifyListeners();
   }
 
   void storePage() {
     _screenState = ApplicationScreenState.store;
-    _currentIndex = 3;
+    _currentIndex = 2;
     notifyListeners();
   }
 
@@ -49,10 +42,8 @@ class CurrentScreenProvider extends ChangeNotifier {
       case 0:
         return homePage();
       case 1:
-        return statsPage();
-      case 2:
         return hotsPage();
-      case 3:
+      case 2:
         return storePage();
       default:
         return homePage();

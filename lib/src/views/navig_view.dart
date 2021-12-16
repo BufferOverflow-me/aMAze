@@ -19,10 +19,6 @@ class NavigView extends StatelessWidget {
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.chartLine),
-                  label: 'Statistics',
-                ),
-                BottomNavigationBarItem(
                   icon: FaIcon(FontAwesomeIcons.fire),
                   label: 'Hot',
                 ),
@@ -33,7 +29,7 @@ class NavigView extends StatelessWidget {
               ],
               currentIndex: screenState.currentIndex,
               onTap: screenState.setCurrentScreen,
-              selectedItemColor: Colors.amber[800],
+              selectedItemColor: Theme.of(context).backgroundColor,
               unselectedItemColor: Theme.of(context).primaryColor,
             ),
             body: AppView(currentScreenState: screenState.screenState));

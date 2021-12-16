@@ -7,6 +7,7 @@ class MyTheme {
         primarySwatch: Colors.indigo,
         textTheme: myTextTheme(),
         primaryTextTheme: myTextTheme(),
+        primaryColorDark: Colors.indigo[200],
       );
 
   static const MaterialColor primarySwatch = MaterialColor(

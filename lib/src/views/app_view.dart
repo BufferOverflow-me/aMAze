@@ -12,8 +12,6 @@ class AppView extends StatelessWidget {
     switch (currentScreenState) {
       case ApplicationScreenState.home:
         return const HomePage();
-      case ApplicationScreenState.stats:
-        return const Center(child: Text('stats'));
       case ApplicationScreenState.hots:
         return const Center(child: Text('hots'));
       case ApplicationScreenState.store:
