@@ -1,13 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/src/screens/settings/components/color_selector.dart';
 import 'package:fitness_app/src/screens/settings/components/options.dart';
 import 'package:fitness_app/src/screens/settings/setting_controller.dart';
-import 'package:fitness_app/src/services/user_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///

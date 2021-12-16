@@ -1,7 +1,5 @@
 // This will provide the details such as user's Image url, name, etc
 
-import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 

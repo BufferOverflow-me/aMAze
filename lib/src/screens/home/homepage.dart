@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'components/line_chart.dart';
 import 'components/user_appbar.dart';
 
@@ -14,11 +13,11 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        height: size.height * 0.45,
+        height: size.height * 0.4,
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
           borderRadius: const BorderRadius.only(
-            bottomRight: Radius.circular(250),
+            bottomRight: Radius.circular(150),
           ),
         ),
         child: Padding(

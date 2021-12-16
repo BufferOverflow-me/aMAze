@@ -22,7 +22,7 @@ void main() async {
   await settingsController.loadSettings();
 
   // Load the colors
-  // final userColor = ColorController();
+  // final userColor = ColorController(ColorService());
   // await userColor.loadColor();
 
   // Initialize firebase

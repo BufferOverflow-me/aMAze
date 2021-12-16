@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MyTheme {
   static String appName = 'aMAze';
   static ThemeData lightTheme() => ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.indigo,
         textTheme: myTextTheme(),
         primaryTextTheme: myTextTheme(),
       );
@@ -27,7 +27,7 @@ class MyTheme {
   );
 
   static ThemeData darkTheme() => ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.blueGrey,
         textTheme: myTextTheme().apply(
           bodyColor: Colors.white,
           displayColor: Colors.white,
