@@ -1,10 +1,10 @@
-import 'package:fitness_app/src/theme/colorService.dart';
+import 'package:fitness_app/src/theme/color/colorService.dart';
 import 'package:flutter/cupertino.dart';
 
 class ColorController extends ChangeNotifier {
   // ignore: empty_constructor_bodies
-  ColorController(this._colorService);
-  final ColorService _colorService;
+  // ColorController(this._colorService);
+  late final ColorService _colorService;
 
   late int _color;
   int get color => _color;
