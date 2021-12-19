@@ -7,7 +7,8 @@ class MyTheme {
         primarySwatch: Colors.indigo,
         textTheme: myTextTheme(),
         primaryTextTheme: myTextTheme(),
-        primaryColorDark: Colors.indigo[200],
+        primaryColorDark: Colors.black87,
+        primaryColorLight: Colors.indigo[200],
       );
 
   static const MaterialColor primarySwatch = MaterialColor(
@@ -33,6 +34,8 @@ class MyTheme {
           bodyColor: Colors.white,
           displayColor: Colors.white,
         ),
+        primaryColorDark: Colors.black,
+        primaryColorLight: Colors.indigo[200],
         primaryTextTheme: myTextTheme(),
         scaffoldBackgroundColor: const Color(0xFF212121),
         canvasColor: const Color.fromARGB(255, 20, 20, 20),

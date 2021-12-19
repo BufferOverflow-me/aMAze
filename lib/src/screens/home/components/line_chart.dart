@@ -21,11 +21,12 @@ class _MyLineChartState extends State<MyLineChart> {
     return Stack(
       children: [
         AspectRatio(
-          aspectRatio: 1.7,
+          aspectRatio: 1.5,
           child: Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              color: Color(0xff232d37), // TODO: change to theme color
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              color: Theme.of(context)
+                  .primaryColorDark, // TODO: change to theme color
             ),
             child: Padding(
               padding: const EdgeInsets.only(
@@ -90,21 +91,19 @@ class _MyLineChartState extends State<MyLineChart> {
         leftTitles: SideTitles(
           showTitles: true,
           interval: 1,
-          getTextStyles: (context, value) => const TextStyle(
-            color: Color(0xff67727d),
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-          ),
+          getTextStyles: (context, value) =>
+              Theme.of(context).textTheme.caption?.copyWith(
+                    color: Theme.of(context).primaryColorLight,
+                  ),
           getTitles: (value) {
             switch (value.toInt()) {
               case 1000:
-                return '10k';
+                return '10';
               // TODO: calorie cases here
             }
             return '';
           },
-          reservedSize: 32,
-          margin: 12,
+          margin: 5,
         ),
       ),
       borderData: FlBorderData(
