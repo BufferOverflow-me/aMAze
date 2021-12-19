@@ -1,6 +1,7 @@
 import 'package:fitness_app/src/screens/settings/components/color_selector.dart';
 import 'package:fitness_app/src/screens/settings/components/options.dart';
 import 'package:fitness_app/src/screens/settings/setting_controller.dart';
+import 'package:fitness_app/src/services/authentication.dart';
 import 'package:flutter/material.dart';
 
 /// Displays the various settings that can be customized by the user.
@@ -45,7 +46,20 @@ class SettingsView extends StatelessWidget {
                 ColorSelector(color: Colors.purple, onTap: () {}),
               ],
               text: 'Color Schema',
-            )
+            ),
+            const Spacer(),
+            TextButton(
+                onPressed: () {
+                  ApplicationStateNotifier().signOut();
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  'Logout',
+                  style: Theme.of(context)
+                      .textTheme
+                      .button
+                      ?.copyWith(color: Colors.red),
+                ))
           ],
         ),
       ),
