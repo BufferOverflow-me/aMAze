@@ -88,7 +88,7 @@ class Authentication extends StatelessWidget {
       default:
         return Row(
           children: const [
-            Text("Internal error, this shouldn't happen..."),
+            Text('Internal error, this shouldn\'t happen...'),
           ],
         );
     }
@@ -100,16 +100,23 @@ void _showErrorDialog(BuildContext context, String title, Exception e) {
     context: context,
     builder: (context) {
       return AlertDialog(
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text(
           title,
-          style: const TextStyle(fontSize: 24),
+          style: Theme.of(context)
+              .textTheme
+              .headline4
+              ?.copyWith(color: Colors.white),
         ),
         content: SingleChildScrollView(
           child: ListBody(
             children: <Widget>[
               Text(
                 e.toString(),
-                style: const TextStyle(fontSize: 18),
+                style: Theme.of(context)
+                    .textTheme
+                    .caption
+                    ?.copyWith(color: Colors.white),
               ),
             ],
           ),
@@ -119,9 +126,9 @@ void _showErrorDialog(BuildContext context, String title, Exception e) {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: const Text(
+            child: Text(
               'OK',
-              style: TextStyle(color: Colors.deepPurple),
+              style: TextStyle(color: Theme.of(context).primaryColorLight),
             ),
           ),
         ],

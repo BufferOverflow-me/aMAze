@@ -26,7 +26,10 @@ class SocialButtons extends StatelessWidget {
                 // ShowErrorDialog(title: 'Something went Wrong', e: e);
               });
             },
-            icon: const FaIcon(FontAwesomeIcons.google),
+            icon: FaIcon(
+              FontAwesomeIcons.google,
+              color: Theme.of(context).primaryColorLight,
+            ),
           ),
           IconButton(
             onPressed: () {
@@ -44,10 +47,13 @@ class SocialButtons extends StatelessWidget {
                 log(e.toString());
               });
             },
-            icon: const FaIcon(FontAwesomeIcons.facebook),
+            icon: FaIcon(FontAwesomeIcons.facebook,
+                color: Theme.of(context).primaryColorLight),
           ),
           IconButton(
-              onPressed: () {}, icon: const FaIcon(FontAwesomeIcons.phone)),
+              onPressed: () {},
+              icon: FaIcon(FontAwesomeIcons.phone,
+                  color: Theme.of(context).primaryColorLight)),
         ],
       ),
     );

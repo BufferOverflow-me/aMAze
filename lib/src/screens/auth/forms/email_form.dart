@@ -54,7 +54,10 @@ class _EmailFormState extends State<EmailForm> {
                             widget.callback(_controller.text);
                           }
                         },
-                        child: const Text('NEXT'),
+                        child: Text(
+                          'NEXT',
+                          style: Theme.of(context).textTheme.button,
+                        ),
                       ),
                     ),
                   ),
