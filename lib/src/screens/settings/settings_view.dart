@@ -48,18 +48,40 @@ class SettingsView extends StatelessWidget {
               text: 'Color Schema',
             ),
             const Spacer(),
-            TextButton(
-                onPressed: () {
-                  ApplicationStateNotifier().signOut();
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  'Logout',
-                  style: Theme.of(context)
-                      .textTheme
-                      .button
-                      ?.copyWith(color: Colors.red),
-                ))
+            ButtonBar(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    ApplicationStateNotifier().signOut();
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'Logout',
+                    style: Theme.of(context)
+                        .textTheme
+                        .button
+                        ?.copyWith(color: Colors.red),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    imageCache?.clear();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Cache cleared!'),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Clear Cache',
+                    style: Theme.of(context)
+                        .textTheme
+                        .button
+                        ?.copyWith(color: Colors.green),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

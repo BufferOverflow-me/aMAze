@@ -72,18 +72,7 @@ class _MyLineChartState extends State<MyLineChart> {
               fontWeight: FontWeight.bold,
               fontSize: 16),
           getTitles: (value) {
-            // switch (value.toInt()) {
-            //   case 0:
-            //     return 'JAN';
-            //   case 2:
-            //     return 'MAR';
-            //   case 5:
-            //     return 'JUN';
-            //   case 8:
-            //     return 'SEP';
-            //   case 12:
-            //     return 'DEC';
-            // }
+            // Cases Here.
             return '';
           },
           margin: 8,
