@@ -1,6 +1,6 @@
 import 'package:fitness_app/src/screens/auth/widgets/social_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:fitness_app/src/screens/auth/widgets/auth_buttons.dart';
+import 'package:fitness_app/src/components/components.dart';
 
 class EmailForm extends StatefulWidget {
   const EmailForm({required this.callback, Key? key}) : super(key: key);

@@ -7,6 +7,7 @@ class MyTextFormField extends StatelessWidget {
     required String hint,
     required String validatorString,
     bool isObsecure = false,
+    this.keyboardType = TextInputType.text,
   })  : _controller = controller,
         hintText = hint,
         validatorText = validatorString,
@@ -17,12 +18,14 @@ class MyTextFormField extends StatelessWidget {
   final String hintText;
   final String validatorText;
   final bool obscureText;
+  final TextInputType keyboardType;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 2.0),
       child: TextFormField(
         controller: _controller,
+        keyboardType: keyboardType,
         decoration: InputDecoration(
           hintText: hintText,
         ),

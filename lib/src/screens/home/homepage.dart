@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fitness_app/src/screens/home/components/functions/weekday.dart';
 import 'package:fitness_app/src/screens/home/components/line_chart.dart';
 import 'package:fitness_app/src/theme/values/global_vals.dart';
 import 'package:flutter/material.dart';
@@ -13,62 +14,39 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height: size.height * 0.4,
-              decoration: BoxDecoration(
-                gradient: myGradient(context),
-                borderRadius: const BorderRadius.only(
-                  bottomRight: Radius.circular(150),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    UserAppBar(
-                      onPressed: () {
-                        Navigator.restorablePushNamed(context, '/settings');
-                      },
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 18.0),
-                      // TODO: If user clicks this chart, then navigate to the chart page
-                      child: RepaintBoundary(
-                        child: MyLineChart(),
-                      ),
-                    ),
-                    // const Spacer(),
-                    // Container(
-                    //   height: size.height * 0.25,
-                    //   width: size.width * 0.9,
-                    //   decoration: BoxDecoration(
-                    //     borderRadius: const BorderRadius.all(
-                    //       Radius.circular(constRadius),
-                    //     ),
-                    //     color: Theme.of(context).primaryColorLight,
-                    //   ),
-                    // ),
-                  ],
-                ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            height: size.height * 0.4,
+            decoration: BoxDecoration(
+              gradient: myGradient(context),
+              borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(150),
               ),
             ),
-            const SizedBox(height: 16.0),
-            ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: images.length,
-              itemBuilder: (context, index) => MyImageContainer(
-                height: size.height * 0.2,
-                width: size.width,
-                imageUrl: images[index],
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  UserAppBar(
+                    onPressed: () {
+                      Navigator.restorablePushNamed(context, '/settings');
+                    },
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 18.0),
+                    // TODO: If user clicks this chart, then navigate to the chart page
+                    child: RepaintBoundary(
+                      child: MyLineChart(),
+                    ),
+                  ),
+                ],
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+          Text(weekday().toString()),
+        ],
       ),
     );
   }

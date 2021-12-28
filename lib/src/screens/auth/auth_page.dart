@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'forms/email_form.dart';
 import 'forms/password_form.dart';
 import 'forms/register_form.dart';
-import 'widgets/auth_buttons.dart';
+import '../../components/components.dart';
 
 class Authentication extends StatelessWidget {
   const Authentication({
