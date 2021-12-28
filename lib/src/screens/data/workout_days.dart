@@ -1,7 +1,6 @@
 import 'package:fitness_app/src/components/components.dart';
 import 'package:fitness_app/src/components/my_dropdown_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class WorkoutDays extends StatefulWidget {
   const WorkoutDays({Key? key}) : super(key: key);
