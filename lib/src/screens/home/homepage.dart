@@ -14,57 +14,47 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Container(
-            height: size.height * 0.4,
-            decoration: BoxDecoration(
-              gradient: myGradient(context),
-              borderRadius: const BorderRadius.only(
-                bottomRight: Radius.circular(150),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  UserAppBar(
-                    onPressed: () {
-                      Navigator.restorablePushNamed(context, '/settings');
-                    },
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 18.0),
-                    // TODO: If user clicks this chart, then navigate to the chart page
-                    child: RepaintBoundary(
-                      child: MyLineChart(),
-                    ),
-                  ),
-                ],
-              ),
+    return Column(
+      children: [
+        Container(
+          height: size.height * 0.4,
+          decoration: BoxDecoration(
+            gradient: myGradient(context),
+            borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(150),
             ),
           ),
-          Text(weekday().toString()),
-        ],
-      ),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                UserAppBar(
+                  onPressed: () {
+                    Navigator.restorablePushNamed(context, '/settings');
+                  },
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 18.0),
+                  // TODO: If user clicks this chart, then navigate to the chart page
+                  child: RepaintBoundary(
+                    child: MyLineChart(),
+                  ),
+                ),
+                // TODO: A list goes here
+                // Here the list will be fetched from the firestore database
+                // Db will have data in sub collections
+                // Each sub collection will have a list of data
+                // Task: Fetch the collections and then fetch the data from the sub collections
+                // and then display the data in a list
+              ],
+            ),
+          ),
+        ),
+        Text(weekday().toString()),
+      ],
     );
   }
 }
-
-final images = [
-  'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/1552248/pexels-photo-1552248.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/2475877/pexels-photo-2475877.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/703012/pexels-photo-703012.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/927437/pexels-photo-927437.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/2105493/pexels-photo-2105493.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/2417510/pexels-photo-2417510.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-  'https://images.pexels.com/photos/1144864/pexels-photo-1144864.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-];
 
 class MyImageContainer extends StatelessWidget {
   const MyImageContainer({
