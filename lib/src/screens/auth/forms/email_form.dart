@@ -31,8 +31,9 @@ class _EmailFormState extends State<EmailForm> {
                   TextFormField(
                     controller: _controller,
                     keyboardType: TextInputType.emailAddress,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       hintText: 'Enter your email',
+                      hintStyle: Theme.of(context).textTheme.headline6,
                     ),
                     validator: (value) {
                       //  Validate if the given string is email
