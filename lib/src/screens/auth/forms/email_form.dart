@@ -28,6 +28,7 @@ class _EmailFormState extends State<EmailForm> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  Image.asset('assets/images/exercising.png'),
                   TextFormField(
                     controller: _controller,
                     keyboardType: TextInputType.emailAddress,

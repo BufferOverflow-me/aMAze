@@ -33,10 +33,6 @@ class _PasswordFormState extends State<PasswordForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Header('Sign in'),
-          Image.asset(
-            'assets/images/PettingDoodle.png',
-            height: 400,
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 24.0,

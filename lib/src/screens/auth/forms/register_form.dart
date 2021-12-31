@@ -38,10 +38,6 @@ class _RegisterFormState extends State<RegisterForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Header('Create account'),
-          Image.asset(
-            'assets/images/SelfieDoodle.png',
-            height: 400,
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Form(
