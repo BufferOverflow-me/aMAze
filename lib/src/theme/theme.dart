@@ -29,13 +29,13 @@ class MyTheme {
   );
 
   static ThemeData darkTheme() => ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.green,
         textTheme: myTextTheme().apply(
           bodyColor: Colors.white,
           displayColor: Colors.white,
         ),
         primaryColorDark: Colors.black,
-        primaryColorLight: Colors.indigo[200],
+        primaryColorLight: Colors.greenAccent,
         primaryTextTheme: myTextTheme(),
         scaffoldBackgroundColor: const Color(0xFF212121),
         canvasColor: const Color.fromARGB(255, 20, 20, 20),
