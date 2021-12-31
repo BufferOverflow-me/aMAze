@@ -28,6 +28,7 @@ class MyTextFormField extends StatelessWidget {
         keyboardType: keyboardType,
         decoration: InputDecoration(
           hintText: hintText,
+          hintStyle: Theme.of(context).textTheme.headline6,
         ),
         obscureText: obscureText,
         validator: (value) {
