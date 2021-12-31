@@ -56,57 +56,62 @@ class Auth extends StatelessWidget {
                   statusBarColor: Theme.of(context).primaryColor,
                 ),
                 child: SafeArea(
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height,
-                    child: Stack(
-                      children: [
-                        // Top section
-                        Positioned(
-                          right: -30,
-                          top: -10,
-                          child: SvgPicture.asset(
-                            'assets/svg/curved_rectangle.svg',
-                            height: 100,
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    keyboardDismissBehavior:
+                        ScrollViewKeyboardDismissBehavior.onDrag,
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      child: Stack(
+                        children: [
+                          // Top section
+                          Positioned(
+                            right: -30,
+                            top: -10,
+                            child: SvgPicture.asset(
+                              'assets/svg/curved_rectangle.svg',
+                              height: 100,
+                            ),
                           ),
-                        ),
-                        Positioned(
-                          top: -15,
-                          right: 15,
-                          child: SvgPicture.asset(
-                            'assets/svg/curved_rectangle.svg',
-                            height: 100,
+                          Positioned(
+                            top: -15,
+                            right: 15,
+                            child: SvgPicture.asset(
+                              'assets/svg/curved_rectangle.svg',
+                              height: 100,
+                            ),
                           ),
-                        ),
 
-                        // Bottom section
-                        Positioned(
-                          bottom: -10,
-                          left: -30,
-                          child: SvgPicture.asset(
-                            'assets/svg/curved_rectangle.svg',
-                            height: 100,
+                          // Bottom section
+                          Positioned(
+                            bottom: -10,
+                            left: -30,
+                            child: SvgPicture.asset(
+                              'assets/svg/curved_rectangle.svg',
+                              height: 100,
+                            ),
                           ),
-                        ),
-                        Positioned(
-                          left: 15,
-                          bottom: -10,
-                          child: SvgPicture.asset(
-                            'assets/svg/curved_rectangle.svg',
-                            height: 100,
+                          Positioned(
+                            left: 15,
+                            bottom: -10,
+                            child: SvgPicture.asset(
+                              'assets/svg/curved_rectangle.svg',
+                              height: 100,
+                            ),
                           ),
-                        ),
-                        Authentication(
-                          email: appState.email,
-                          loginState: appState.loginState,
-                          startLoginFlow: appState.startLoginFlow,
-                          verifyEmail: appState.verifyEmail,
-                          signInWithEmailAndPassword:
-                              appState.signInWithEmailAndPassword,
-                          cancelRegistration: appState.cancelRegistration,
-                          registerAccount: appState.registerAccount,
-                          signOut: appState.signOut,
-                        ),
-                      ],
+                          Authentication(
+                            email: appState.email,
+                            loginState: appState.loginState,
+                            startLoginFlow: appState.startLoginFlow,
+                            verifyEmail: appState.verifyEmail,
+                            signInWithEmailAndPassword:
+                                appState.signInWithEmailAndPassword,
+                            cancelRegistration: appState.cancelRegistration,
+                            registerAccount: appState.registerAccount,
+                            signOut: appState.signOut,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

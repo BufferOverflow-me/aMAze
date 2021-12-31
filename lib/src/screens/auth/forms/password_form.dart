@@ -29,57 +29,55 @@ class _PasswordFormState extends State<PasswordForm> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Header('Sign in'),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 24.0,
-            ),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SvgPicture.asset(
-                    'assets/svg/personal_trainer.svg',
-                    height: 400,
-                  ),
-                  MyTextFormField(
-                      controller: _emailController,
-                      hint: 'Enter your email',
-                      validatorString: 'Enter your email address to continue'),
-                  MyTextFormField(
-                    controller: _passwordController,
-                    hint: 'Password',
-                    isObsecure: true,
-                    validatorString: 'Enter your password',
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      child: StyledButton(
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            widget.login(
-                              _emailController.text,
-                              _passwordController.text,
-                            );
-                          }
-                        },
-                        child: const Text('SIGN IN'),
-                      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Header('Sign in'),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 24.0,
+          ),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SvgPicture.asset(
+                  'assets/svg/personal_trainer.svg',
+                  height: 400,
+                ),
+                MyTextFormField(
+                    controller: _emailController,
+                    hint: 'Enter your email',
+                    validatorString: 'Enter your email address to continue'),
+                MyTextFormField(
+                  controller: _passwordController,
+                  hint: 'Password',
+                  isObsecure: true,
+                  validatorString: 'Enter your password',
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    child: StyledButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          widget.login(
+                            _emailController.text,
+                            _passwordController.text,
+                          );
+                        }
+                      },
+                      child: const Text('SIGN IN'),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

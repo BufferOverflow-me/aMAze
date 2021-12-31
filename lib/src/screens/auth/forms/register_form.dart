@@ -33,72 +33,70 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Header('Create account'),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SvgPicture.asset(
-                    'assets/svg/indoor_bike.svg',
-                    height: 400,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Header('Create account'),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SvgPicture.asset(
+                  'assets/svg/indoor_bike.svg',
+                  height: 400,
+                ),
+                MyTextFormField(
+                    controller: _emailController,
+                    hint: 'Email',
+                    validatorString: 'Enter your email to continue'),
+                MyTextFormField(
+                    controller: _displayNameController,
+                    hint: 'First & last name',
+                    validatorString: 'Enter your name'),
+                MyTextFormField(
+                  controller: _passwordController,
+                  hint: 'Password',
+                  validatorString: 'Enter your Password',
+                  isObsecure: true,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: widget.cancel,
+                        child: const Text('CANCEL'),
+                      ),
+                      StyledButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            widget.registerAccount(
+                              _emailController.text,
+                              _displayNameController.text,
+                              _passwordController.text,
+                            );
+                          }
+                        },
+                        child: const Text('SAVE'),
+                      ),
+                    ],
                   ),
-                  MyTextFormField(
-                      controller: _emailController,
-                      hint: 'Email',
-                      validatorString: 'Enter your email to continue'),
-                  MyTextFormField(
-                      controller: _displayNameController,
-                      hint: 'First & last name',
-                      validatorString: 'Enter your name'),
-                  MyTextFormField(
-                    controller: _passwordController,
-                    hint: 'Password',
-                    validatorString: 'Enter your Password',
-                    isObsecure: true,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: widget.cancel,
-                          child: const Text('CANCEL'),
-                        ),
-                        StyledButton(
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              widget.registerAccount(
-                                _emailController.text,
-                                _displayNameController.text,
-                                _passwordController.text,
-                              );
-                            }
-                          },
-                          child: const Text('SAVE'),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
-            child: SocialButtons(),
-          )
-        ],
-      ),
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 8.0),
+          child: SocialButtons(),
+        )
+      ],
     );
   }
 }
