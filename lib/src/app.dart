@@ -5,6 +5,7 @@ import 'package:fitness_app/src/services/authentication.dart';
 import 'package:fitness_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -55,16 +56,58 @@ class Auth extends StatelessWidget {
                   statusBarColor: Theme.of(context).primaryColor,
                 ),
                 child: SafeArea(
-                  child: Authentication(
-                    email: appState.email,
-                    loginState: appState.loginState,
-                    startLoginFlow: appState.startLoginFlow,
-                    verifyEmail: appState.verifyEmail,
-                    signInWithEmailAndPassword:
-                        appState.signInWithEmailAndPassword,
-                    cancelRegistration: appState.cancelRegistration,
-                    registerAccount: appState.registerAccount,
-                    signOut: appState.signOut,
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    child: Stack(
+                      children: [
+                        // Top section
+                        Positioned(
+                          right: -30,
+                          top: -10,
+                          child: SvgPicture.asset(
+                            'assets/svg/curved_rectangle.svg',
+                            height: 100,
+                          ),
+                        ),
+                        Positioned(
+                          top: -15,
+                          right: 15,
+                          child: SvgPicture.asset(
+                            'assets/svg/curved_rectangle.svg',
+                            height: 100,
+                          ),
+                        ),
+
+                        // Bottom section
+                        Positioned(
+                          bottom: -10,
+                          left: -30,
+                          child: SvgPicture.asset(
+                            'assets/svg/curved_rectangle.svg',
+                            height: 100,
+                          ),
+                        ),
+                        Positioned(
+                          left: 15,
+                          bottom: -10,
+                          child: SvgPicture.asset(
+                            'assets/svg/curved_rectangle.svg',
+                            height: 100,
+                          ),
+                        ),
+                        Authentication(
+                          email: appState.email,
+                          loginState: appState.loginState,
+                          startLoginFlow: appState.startLoginFlow,
+                          verifyEmail: appState.verifyEmail,
+                          signInWithEmailAndPassword:
+                              appState.signInWithEmailAndPassword,
+                          cancelRegistration: appState.cancelRegistration,
+                          registerAccount: appState.registerAccount,
+                          signOut: appState.signOut,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

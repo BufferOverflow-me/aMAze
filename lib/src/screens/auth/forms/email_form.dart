@@ -1,6 +1,7 @@
 import 'package:fitness_app/src/screens/auth/widgets/social_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_app/src/components/components.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class EmailForm extends StatefulWidget {
   const EmailForm({required this.callback, Key? key}) : super(key: key);
@@ -28,13 +29,24 @@ class _EmailFormState extends State<EmailForm> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset('assets/images/exercising.png'),
+                  SvgPicture.asset(
+                    'assets/svg/fitness_tracker.svg',
+                    height: 400,
+                  ),
                   TextFormField(
                     controller: _controller,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       hintText: 'Enter your email',
                       hintStyle: Theme.of(context).textTheme.headline6,
+                      // Green colored border
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        borderSide: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 2,
+                        ),
+                      ),
                     ),
                     validator: (value) {
                       //  Validate if the given string is email
@@ -52,7 +64,7 @@ class _EmailFormState extends State<EmailForm> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
                       child: StyledButton(
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {

@@ -14,7 +14,7 @@ class AmazeIntroductionPage extends StatelessWidget {
     return IntroductionScreen(
       pages: [
         PageViewModel(
-          image: buildImage('assets/svg/pushup_guy.svg', context),
+          image: buildImage('assets/svg/pushup_guy_green.svg', context),
           titleWidget: Align(
             alignment: Alignment.bottomLeft,
             child: Column(
@@ -45,7 +45,7 @@ class AmazeIntroductionPage extends StatelessWidget {
           decoration: getPageDecoration(),
         ),
         PageViewModel(
-          image: buildImage('assets/svg/yoga_lady.svg', context),
+          image: buildImage('assets/svg/yoga_lady_green.svg', context),
           titleWidget: Align(
             alignment: Alignment.bottomLeft,
             child: Column(
@@ -76,7 +76,7 @@ class AmazeIntroductionPage extends StatelessWidget {
           decoration: getPageDecoration(),
         ),
         PageViewModel(
-          image: buildImage('assets/svg/meditating_lady.svg', context),
+          image: buildImage('assets/svg/mindfulness_scgo.svg', context),
           titleWidget: Align(
             alignment: Alignment.bottomLeft,
             child: Column(
