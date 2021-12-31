@@ -1,5 +1,6 @@
-import 'package:fitness_app/src/screens/data/workout_days.dart';
+import 'package:fitness_app/src/services/workout_day_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MyDropDownMenu extends StatefulWidget {
   const MyDropDownMenu({
@@ -7,11 +8,13 @@ class MyDropDownMenu extends StatefulWidget {
     required this.myDropdownItems,
     this.title = '',
     this.icon = Icons.arrow_drop_down,
+    required this.index,
   }) : super(key: key);
 
   final List<String> myDropdownItems;
   final String title;
   final IconData icon;
+  final int index;
 
   @override
   State<MyDropDownMenu> createState() => _MyDropDownMenuState();
@@ -27,18 +30,19 @@ class _MyDropDownMenuState extends State<MyDropDownMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            widget.title,
-            textAlign: TextAlign.end,
-            style: Theme.of(context).textTheme.headline6,
-          ),
-          DropdownButton(
+    // final provider = Provider.of<WorkoutDayProvider>(context, listen: false);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          widget.title,
+          textAlign: TextAlign.end,
+          style: Theme.of(context).textTheme.headline6,
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.5,
+          child: DropdownButtonFormField(
             value: _selectedItem,
             icon: Icon(widget.icon),
             iconSize: 24,
@@ -48,7 +52,13 @@ class _MyDropDownMenuState extends State<MyDropDownMenu> {
               setState(() {
                 _selectedItem = newValue!;
               });
+              Provider.of<WorkoutDayProvider>(context, listen: false)
+                  .workoutDataArraySetter(widget.index, newValue!);
             },
+            // onSaved: (String? newValue) {
+            // print('WorkOut Data Array: ' +
+            //     provider.workoutDataArray.toString());
+            // },
             items: widget.myDropdownItems.map<DropdownMenuItem<String>>(
               (String value) {
                 return DropdownMenuItem<String>(
@@ -58,47 +68,8 @@ class _MyDropDownMenuState extends State<MyDropDownMenu> {
               },
             ).toList(),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
-/*
-
- required this.myDropdownItems,
-    this.title = '',
-    this.icon = Icons.arrow_drop_down,
-
-
-
-Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Text(widget.title),
-        const SizedBox(width: 10),
-        DropdownButton<String>(
-          value: widget.myDropdownItems[0],
-          icon: Icon(widget.icon),
-          iconSize: 24,
-          elevation: 16,
-          style: const TextStyle(color: Colors.deepPurple),
-          underline: Container(
-            height: 2,
-            color: Colors.deepPurpleAccent,
-          ),
-          onChanged: (String? newValue) {
-            setState(() {
-              widget.myDropdownItems[0] = newValue!;
-            });
-          },
-          items: widget.myDropdownItems.map<DropdownMenuItem<String>>(
-            (String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            },
-          ).toList(),
-        ),
-      ],
-    )*/
