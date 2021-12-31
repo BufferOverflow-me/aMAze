@@ -1,5 +1,6 @@
 import 'package:fitness_app/src/components/my_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../components/components.dart';
 
@@ -42,6 +43,10 @@ class _PasswordFormState extends State<PasswordForm> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  SvgPicture.asset(
+                    'assets/svg/personal_trainer.svg',
+                    height: 400,
+                  ),
                   MyTextFormField(
                       controller: _emailController,
                       hint: 'Enter your email',

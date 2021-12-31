@@ -2,6 +2,7 @@ import 'package:fitness_app/src/components/components.dart';
 import 'package:fitness_app/src/components/my_text_form_field.dart';
 import 'package:fitness_app/src/screens/auth/widgets/social_buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({
@@ -45,6 +46,10 @@ class _RegisterFormState extends State<RegisterForm> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  SvgPicture.asset(
+                    'assets/svg/indoor_bike.svg',
+                    height: 400,
+                  ),
                   MyTextFormField(
                       controller: _emailController,
                       hint: 'Email',
