@@ -1,6 +1,6 @@
 import 'package:fitness_app/src/screens/auth/widgets/social_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:fitness_app/src/screens/auth/widgets/auth_buttons.dart';
+import 'package:fitness_app/src/components/components.dart';
 
 class EmailForm extends StatefulWidget {
   const EmailForm({required this.callback, Key? key}) : super(key: key);
@@ -20,10 +20,6 @@ class _EmailFormState extends State<EmailForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Header('Sign in with email'),
-          Image.asset(
-            'assets/images/ReadingDoodle.png',
-            height: 400,
-          ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
@@ -34,12 +30,20 @@ class _EmailFormState extends State<EmailForm> {
                 children: <Widget>[
                   TextFormField(
                     controller: _controller,
-                    decoration: const InputDecoration(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
                       hintText: 'Enter your email',
+                      hintStyle: Theme.of(context).textTheme.headline6,
                     ),
                     validator: (value) {
+                      //  Validate if the given string is email
                       if (value!.isEmpty) {
-                        return 'Enter your email address to continue';
+                        return 'Please enter your email';
+                      }
+                      if (!RegExp(
+                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                          .hasMatch(value)) {
+                        return 'Please enter a valid email';
                       }
                       return null;
                     },

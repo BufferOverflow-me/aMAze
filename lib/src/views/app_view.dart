@@ -1,3 +1,4 @@
+import 'package:fitness_app/src/screens/data/workout_days.dart';
 import 'package:fitness_app/src/screens/home/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,8 @@ class AppView extends StatelessWidget {
       case ApplicationScreenState.home:
         return const HomePage();
       case ApplicationScreenState.hots:
-        return const Center(child: Text('hots'));
+        // return const Center(child: Text('hots'));
+        return const WorkoutDays();
       case ApplicationScreenState.store:
         return const Center(child: Text('store'));
       default:
