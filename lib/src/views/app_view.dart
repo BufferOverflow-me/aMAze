@@ -12,14 +12,14 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (currentScreenState) {
       case ApplicationScreenState.home:
-        return const HomePage();
+        return HomePage();
       case ApplicationScreenState.hots:
         // return const Center(child: Text('hots'));
         return const WorkoutDays();
       case ApplicationScreenState.store:
         return const Center(child: Text('store'));
       default:
-        return const HomePage();
+        return HomePage();
     }
   }
 }

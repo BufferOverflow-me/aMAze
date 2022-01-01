@@ -79,7 +79,7 @@ class Authentication extends StatelessWidget {
           },
         );
       case ApplicationLoginState.loggedIn:
-        return const HomePage();
+        return HomePage();
       case ApplicationLoginState.forgetPassword:
         return const Center(
           child: Text('Forget Password'),
