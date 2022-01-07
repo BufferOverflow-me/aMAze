@@ -66,10 +66,10 @@ class _WorkoutDaysState extends State<WorkoutDays> {
                 onPressed: () async {
                   // Save info to firebase and into local storage
                   // Print out the workouts
-                  print(_workoutDaysKey.currentState);
+                  // print(_workoutDaysKey.currentState);
                   _workoutDaysKey.currentState?.save();
                   try {
-                    print('Saving to firebase');
+                    // print('Saving to firebase');
                     workout.update({
                       'workouts': provider.workoutDataArray,
                     });
