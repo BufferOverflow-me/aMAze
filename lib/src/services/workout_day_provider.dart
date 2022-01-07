@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class WorkoutDayProvider extends ChangeNotifier {
-  List<String> _workoutDataArray = [
+  final List<String> _workoutDataArray = [
     'Rest',
     'Rest',
     'Rest',
