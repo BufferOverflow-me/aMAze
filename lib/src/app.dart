@@ -1,6 +1,6 @@
 import 'package:fitness_app/src/screens/auth/auth_page.dart';
-import 'package:fitness_app/src/screens/settings/setting_controller.dart';
-import 'package:fitness_app/src/screens/settings/settings_view.dart';
+import 'package:fitness_app/src/screens/settings/tools/setting_controller.dart';
+import 'package:fitness_app/src/screens/settings/view/settings_view.dart';
 import 'package:fitness_app/src/screens/workout/workout.dart';
 import 'package:fitness_app/src/services/authentication.dart';
 import 'package:fitness_app/src/theme/theme.dart';

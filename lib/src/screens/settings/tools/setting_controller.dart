@@ -1,4 +1,4 @@
-import 'package:fitness_app/src/screens/settings/settings_service.dart';
+import 'package:fitness_app/src/screens/settings/tools/settings_service.dart';
 import 'package:flutter/material.dart';
 
 /// A class that many Widgets can interact with to read user settings, update

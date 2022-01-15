@@ -1,6 +1,6 @@
 import 'package:fitness_app/src/screens/settings/components/color_selector.dart';
 import 'package:fitness_app/src/screens/settings/components/options.dart';
-import 'package:fitness_app/src/screens/settings/setting_controller.dart';
+import 'package:fitness_app/src/screens/settings/tools/setting_controller.dart';
 import 'package:fitness_app/src/services/authentication.dart';
 import 'package:flutter/material.dart';
 
