@@ -1,11 +1,11 @@
 import 'package:fitness_app/src/screens/home/view/homepage.dart';
 import 'package:fitness_app/src/screens/introduction/onboard.dart';
-import 'package:fitness_app/src/services/authentication.dart';
+import 'package:fitness_app/src/services/provider/authentication.dart';
 import 'package:flutter/material.dart';
-import 'forms/email_form.dart';
-import 'forms/password_form.dart';
-import 'forms/register_form.dart';
-import '../../components/components.dart';
+import '../forms/email_form.dart';
+import '../forms/password_form.dart';
+import '../forms/register_form.dart';
+import '../../../components/components.dart';
 
 class Authentication extends StatelessWidget {
   const Authentication({

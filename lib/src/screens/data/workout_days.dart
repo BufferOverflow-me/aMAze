@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/src/components/components.dart';
 import 'package:fitness_app/src/components/my_dropdown_menu.dart';
-import 'package:fitness_app/src/services/workout_day_provider.dart';
+import 'package:fitness_app/src/services/provider/workout_day_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
