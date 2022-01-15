@@ -1,5 +1,4 @@
-import 'package:fitness_app/src/screens/data/workout_days.dart';
-import 'package:fitness_app/src/screens/home/view/homepage.dart';
+import 'package:fitness_app/src/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 import 'provider/current_screen_provider.dart';

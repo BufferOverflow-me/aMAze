@@ -1,13 +1,13 @@
 /// App will ask the user to set his week days with workout
-enum WorkoutDays {
-  monday,
-  tuesday,
-  wednesday,
-  thursday,
-  friday,
-  saturday,
-  sunday,
-}
+// enum WorkoutDays {
+//   monday,
+//   tuesday,
+//   wednesday,
+//   thursday,
+//   friday,
+//   saturday,
+//   sunday,
+// }
 
 /// This data will be fetched from the server
 /// and will be used to populate the workout

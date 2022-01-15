@@ -1,8 +1,8 @@
-import 'package:fitness_app/src/components/my_text_form_field.dart';
+import 'package:fitness_app/src/components/view/my_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../components/components.dart';
+import '../../../components/view/common.dart';
 
 class PasswordForm extends StatefulWidget {
   const PasswordForm({

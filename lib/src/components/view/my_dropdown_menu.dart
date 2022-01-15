@@ -1,4 +1,4 @@
-import 'package:fitness_app/src/services/provider/workout_day_provider.dart';
+import 'package:fitness_app/src/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

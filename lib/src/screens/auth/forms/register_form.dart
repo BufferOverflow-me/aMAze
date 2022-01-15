@@ -1,5 +1,5 @@
-import 'package:fitness_app/src/components/components.dart';
-import 'package:fitness_app/src/components/my_text_form_field.dart';
+import 'package:fitness_app/src/components/view/common.dart';
+import 'package:fitness_app/src/components/view/my_text_form_field.dart';
 import 'package:fitness_app/src/screens/auth/widgets/social_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

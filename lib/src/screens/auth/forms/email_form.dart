@@ -1,6 +1,4 @@
-import 'package:fitness_app/src/screens/auth/widgets/social_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:fitness_app/src/components/components.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class EmailForm extends StatefulWidget {
