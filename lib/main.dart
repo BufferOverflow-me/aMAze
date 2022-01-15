@@ -1,11 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/src/app.dart';
-import 'package:fitness_app/src/screens/settings/tools/setting_controller.dart';
-import 'package:fitness_app/src/screens/settings/tools/settings_service.dart';
-import 'package:fitness_app/src/services/provider/authentication.dart';
-import 'package:fitness_app/src/services/provider/user_provider.dart';
-import 'package:fitness_app/src/services/provider/workout_day_provider.dart';
+import 'package:fitness_app/src/screens/screens.dart';
+import 'package:fitness_app/src/services/services.dart';
 import 'package:fitness_app/src/view/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

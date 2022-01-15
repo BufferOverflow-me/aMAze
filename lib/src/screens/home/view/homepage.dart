@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fitness_app/src/screens/home/components/line_chart.dart';
-import 'package:fitness_app/src/screens/workout/workout.dart';
+import 'package:fitness_app/src/screens/screens.dart';
 import 'package:fitness_app/src/theme/values/global_vals.dart';
 import 'package:flutter/material.dart';
-import '../components/user_appbar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

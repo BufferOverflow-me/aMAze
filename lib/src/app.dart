@@ -1,8 +1,5 @@
-import 'package:fitness_app/src/screens/auth/view/auth_page.dart';
-import 'package:fitness_app/src/screens/settings/tools/setting_controller.dart';
-import 'package:fitness_app/src/screens/settings/view/settings_view.dart';
-import 'package:fitness_app/src/screens/workout/workout.dart';
-import 'package:fitness_app/src/services/provider/authentication.dart';
+import 'package:fitness_app/src/screens/screens.dart';
+import 'package:fitness_app/src/services/services.dart';
 import 'package:fitness_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

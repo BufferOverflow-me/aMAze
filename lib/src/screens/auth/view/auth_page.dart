@@ -1,11 +1,7 @@
-import 'package:fitness_app/src/screens/home/view/homepage.dart';
-import 'package:fitness_app/src/screens/introduction/onboard.dart';
-import 'package:fitness_app/src/services/provider/authentication.dart';
+import 'package:fitness_app/src/components/components.dart';
+import 'package:fitness_app/src/screens/screens.dart';
+import 'package:fitness_app/src/services/services.dart';
 import 'package:flutter/material.dart';
-import '../forms/email_form.dart';
-import '../forms/password_form.dart';
-import '../forms/register_form.dart';
-import '../../../components/view/common.dart';
 
 class Authentication extends StatelessWidget {
   const Authentication({
@@ -79,7 +75,7 @@ class Authentication extends StatelessWidget {
           },
         );
       case ApplicationLoginState.loggedIn:
-        return HomePage();
+        return const HomePage();
       case ApplicationLoginState.forgetPassword:
         return const Center(
           child: Text('Forget Password'),

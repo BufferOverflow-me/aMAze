@@ -1,3 +1,5 @@
+import 'package:fitness_app/src/components/components.dart';
+import 'package:fitness_app/src/screens/auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
