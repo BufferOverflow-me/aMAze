@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitness_app/src/screens/home/components/line_chart.dart';
+import 'package:fitness_app/src/screens/workout/workout.dart';
 import 'package:fitness_app/src/theme/values/global_vals.dart';
 import 'package:flutter/material.dart';
 import 'components/user_appbar.dart';
@@ -54,15 +55,32 @@ class HomePage extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        FutureBuilder<DocumentSnapshot>(
-          future: workouts.doc('workout_list').get(),
-          builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-            var data = snapshot.data!;
+        FutureBuilder<QuerySnapshot>(
+          future: workouts.get(),
+          builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            var data = snapshot.data?.docs;
             if (snapshot.connectionState == ConnectionState.done) {
-              return Workouts(
-                  size: size,
-                  workoutNames: data.get('Push')[0]['title'],
-                  imageUrl: data.get('Push')[0]['imageUrl'].toString());
+              List<Widget> list = [];
+              for (var i = 0; i < data!.length; i++) {
+                list.add(InkWell(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => WorkoutView(
+                        id: data[i].get('name'),
+                      ),
+                    ),
+                  ),
+                  child: ListTile(
+                    title: Text(data[i].get('name')),
+                  ),
+                ));
+              }
+              return Expanded(
+                child: ListView(
+                  children: list,
+                ),
+              );
             }
             return const CircularProgressIndicator();
           },

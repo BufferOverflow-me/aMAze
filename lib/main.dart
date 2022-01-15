@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/src/app.dart';
 import 'package:fitness_app/src/screens/settings/setting_controller.dart';
@@ -37,6 +38,9 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
+  FirebaseFirestore.instance.settings =
+      const Settings(persistenceEnabled: false);
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider<ApplicationStateNotifier>(
